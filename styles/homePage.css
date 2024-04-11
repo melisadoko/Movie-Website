@@ -88,7 +88,7 @@ li a:hover {
 }
 
 .parallax {
-  background-image: url("images/parallax.jpg");
+  background-image: url("../images/parallax.jpg");
   height: 500px;
   /*create parallax effect*/
   background-attachment: fixed;
