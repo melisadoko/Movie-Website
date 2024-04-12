@@ -26,7 +26,7 @@ caption {
   border-spacing: 10px;
 }
 
-#movie {
+#movieDate {
   border-bottom: 1px solid black;
   border-radius: 5px;
   background-color: #e0ebeb;
@@ -78,9 +78,4 @@ caption {
   text-transform: uppercase;
   background-color: #eaf6f6;
   border-radius: 5px;
-}
-
-/*MOVIES CSS*/
-main {
-  height: 3000px;
 }

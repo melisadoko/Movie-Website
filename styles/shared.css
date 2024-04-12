@@ -168,21 +168,25 @@ nav ul li a:hover,
 /*FOOTER*/
 .footer {
   background-color: #262626;
-  padding: 20px;
+  padding: 15px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  width: 100%;
 }
 
 .footer-1,
 .footer-2 {
   flex: 1;
+  text-align: center;
 }
 
 .footer-1 h2,
 .footer-2 h2 {
   font-size: 18px;
   margin-bottom: 10px;
+  color: #fff;
+  text-shadow: 1px 1px 2px pink;
 }
 
 .footer-1 ul {
@@ -202,26 +206,109 @@ nav ul li a:hover,
 
 .footer-1 ul li a {
   text-decoration: none;
-  color: #333;
+  color: #fff;
 }
 
 .footer-1 ul li a:hover {
   color: #666;
+  border-bottom: 1px solid #fff;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
 }
 
 .footer-2 img {
   display: inline-block;
-  margin-right: 10px;
+  margin-left: 0.6rem;
+  width: 1.4rem;
+  height: auto;
 }
 
-#powered {
+.footer-2 img:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.powered {
   flex-basis: 100%;
   margin-top: 20px;
+  text-align: center;
 }
 
-#powered p {
+.powered h2 {
+  font-weight: lighter;
   font-size: 14px;
-  color: #666;
+  color: #fff;
+}
+
+/*MOVIE CSS*/
+
+.movie_section > h2 {
+  width: 100%;
+  text-align: center;
+  margin: 0.5em;
+  padding: 0.5em;
+}
+
+.movie_section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #f9f9f9;
+}
+
+/* Styling for individual movie articles */
+.movie {
+  width: 15em;
+  margin: 0 1.5rem 1.5rem 1.5rem; /* Margin between movies */
+  background-color: #f2f2f2;
+  border-radius: 2%;
+  text-align: center;
+}
+
+.movie a {
+  text-decoration: none;
+}
+
+.movie h5 {
+  padding: 0.2rem;
+}
+/* Styling for movie images */
+.movie-photo {
+  width: 100%;
+  height: auto;
+}
+
+/* Styling for movie titles */
+.movie-content figcaption {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #262626;
+}
+
+/* Styling for movie genres */
+.movie ul {
+  margin: 10px 0 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.movie ul li {
+  display: inline-block;
+  padding: 0.1em 0.2em;
+}
+
+/* Styling for movie links */
+.movie a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Hover effect for movie links */
+.movie a:hover {
+  opacity: 0.8;
 }
 
 @media screen and (min-width: 791px) {
