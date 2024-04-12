@@ -1,33 +1,39 @@
-function createLoaderPieces() {
-  const loader = document.getElementById("loader");
-  for (let i = 0; i < 30; i++) {
-    const piece = document.createElement("div");
-    piece.classList.add("loader-piece");
-    piece.style.transform = `rotate(${i * 12}deg)`; // Rotate each piece evenly around the circle
-    loader.appendChild(piece);
-  }
-}
+const mobileNav = document.querySelector(".hamburger");
+const navbar = document.querySelector(".menubar");
+const toggleNav = () => {
+  navbar.classList.toggle("active");
+  mobileNav.classList.toggle("hamburger-active");
+};
+mobileNav.addEventListener("click", () => toggleNav());
 
-// Function to set the completion of the loader
-function setLoaderCompletion(completion) {
-  const pieces = document.querySelectorAll(".loader-piece");
-  const redPiecesCount = Math.min(
-    Math.floor((completion * pieces.length) / 100),
-    pieces.length
-  );
-  for (let i = 0; i < redPiecesCount; i++) {
-    pieces[i].classList.add("red");
-  }
-}
+(function () {
+  const second = 1000,
+    minute = second * 60,
+    hour = minute * 60,
+    day = hour * 24;
 
-// Example usage:
-// Call setLoaderCompletion function with completion percentage (here 20%)
-window.addEventListener(
-  "DOMContentLoaded",
-  function () {
-    createLoaderPieces();
-    // Example usage: Set completion to 20%
-    setLoaderCompletion(20);
-  },
-  false
-);
+  const movie_date = new Date(2024, 03, 30);
+  const countDown = new Date(movie_date).getTime(),
+    x = setInterval(function () {
+      const now = new Date().getTime(),
+        distance = countDown - now;
+      if (distance > 0) {
+        (document.getElementById("days").innerText = Math.floor(
+          distance / day
+        )),
+          (document.getElementById("hours").innerText = Math.floor(
+            (distance % day) / hour
+          )),
+          (document.getElementById("minutes").innerText = Math.floor(
+            (distance % hour) / minute
+          )),
+          (document.getElementById("seconds").innerText = Math.floor(
+            (distance % minute) / second
+          ));
+      } else {
+        document.getElementById("movie_released").innerText = "Movie out now!";
+        document.getElementById("content").style.display = "none";
+        clearInterval(x);
+      }
+    }, 0);
+})();
