@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Movify - Movies & Serials</title>
     <link rel="stylesheet" type="text/css" href="../styles/shared.css" />
-    <link rel="stylesheet" type="text/css" href="../styles/homePage.css" />
+    <link rel="stylesheet" type="text/css" href="../styles/home.css" />
   </head>
   <body>
     <header>
@@ -16,7 +16,7 @@
         </div>
         <ul>
           <li>
-            <a href="#" class="selected"
+            <a href="home.html" class="selected"
               ><img
                 src="../images/movie_logo.png"
                 alt="movies"
@@ -25,16 +25,16 @@
             >
           </li>
           <li>
-            <a href="#"
+            <a href="series.html"
               ><img
-                src="../images/serial_logo.png"
-                alt="serials"
+                src="../images/series_logo.png"
+                alt="series"
                 class="navbar_logo"
               />Seriale</a
             >
           </li>
           <li>
-            <a href="#"
+            <a href="favourite.html"
               ><img
                 src="../images/white_heart.png"
                 alt="favourites"
@@ -44,12 +44,18 @@
           </li>
         </ul>
         <div class="search_profile">
-          <input type="text" id="search_input" placeholder="Search" />
+          <input
+            type="text"
+            id="search_input"
+            onkeypress="handleSearchKeyPress(event)"
+            placeholder="Search"
+          />
           <img
             src="../images/search.png"
             alt="search"
             id="search_icon"
             class="search_profile_logo"
+            onclick="searchMovies()"
           />
           <a href="#"
             ><img
@@ -67,7 +73,7 @@
       <aside class="menubar">
         <ul>
           <li>
-            <a href="#" class="selected"
+            <a href="home.html" class="selected"
               ><img
                 src="../images/movie_logo.png"
                 alt="movies"
@@ -76,16 +82,16 @@
             >
           </li>
           <li>
-            <a href="#"
+            <a href="series.html"
               ><img
-                src="../images/serial_logo.png"
-                alt="serials"
+                src="../images/series_logo.png"
+                alt="series"
                 class="navbar_logo"
               />Seriale</a
             >
           </li>
           <li>
-            <a href="#"
+            <a href="favourite.html"
               ><img
                 src="../images/white_heart.png"
                 alt="favourites"
@@ -184,13 +190,14 @@
       <section class="movie_section">
         <h2>FILMAT E FUNDIT</h2>
         <article class="movie">
-          <h5>1</h5>
+          <h5>Movie</h5>
           <a href="#">
             <figure class="movie-content">
               <img
                 src="../images/kung_fu.png"
                 alt="Kung Fu Panda 4 (2024)"
                 class="movie-photo"
+                onclick="saveMovieNameLocalStorage(this)"
               />
               <figcaption>Kung Fu Panda 4 (2024)</figcaption>
             </figure>
@@ -202,13 +209,14 @@
           </a>
         </article>
         <article class="movie">
-          <h5>2</h5>
+          <h5>Movie</h5>
           <a href="#">
             <figure class="movie-content">
               <img
                 src="../images/tearsmith.png"
                 alt="The Tearsmith (2024)"
                 class="movie-photo"
+                onclick="saveMovieNameLocalStorage(this)"
               />
               <figcaption>The Tearsmith (2024)</figcaption>
             </figure>
@@ -220,13 +228,14 @@
           </a>
         </article>
         <article class="movie">
-          <h5>3</h5>
+          <h5>Movie</h5>
           <a href="#">
             <figure class="movie-content">
               <img
                 src="../images/imaginary.png"
                 alt="Imaginary (2024)"
                 class="movie-photo"
+                onclick="saveMovieNameLocalStorage(this)"
               />
               <figcaption>Imaginary (2024)</figcaption>
             </figure>
@@ -238,13 +247,14 @@
           </a>
         </article>
         <article class="movie">
-          <h5>4</h5>
+          <h5>Movie</h5>
           <a href="#">
             <figure class="movie-content">
               <img
                 src="../images/settlers.png"
-                alt="Kung Fu Panda 4 (2024)"
+                alt="The Settlers (2023)"
                 class="movie-photo"
+                onclick="saveMovieNameLocalStorage(this)"
               />
               <figcaption>The Settlers (2023)</figcaption>
             </figure>
@@ -256,13 +266,14 @@
           </a>
         </article>
         <article class="movie">
-          <h5>5</h5>
+          <h5>Movie</h5>
           <a href="#">
             <figure class="movie-content">
               <img
                 src="../images/much_love.png"
                 alt="Too Much Love (2023)"
                 class="movie-photo"
+                onclick="saveMovieNameLocalStorage(this)"
               />
               <figcaption>Too Much Love (2023)</figcaption>
             </figure>
@@ -274,13 +285,14 @@
           </a>
         </article>
         <article class="movie">
-          <h5>6</h5>
+          <h5>Movie</h5>
           <a href="#">
             <figure class="movie-content">
               <img
                 src="../images/scoop.png"
                 alt="Scoop (2024)"
                 class="movie-photo"
+                onclick="saveMovieNameLocalStorage(this)"
               />
               <figcaption>Scoop (2024)</figcaption>
             </figure>
@@ -292,13 +304,14 @@
           </a>
         </article>
         <article class="movie">
-          <h5>7</h5>
+          <h5>Movie</h5>
           <a href="#">
             <figure class="movie-content">
               <img
                 src="../images/ordinary_angles.png"
                 alt="Ordinary Angles (2024)"
                 class="movie-photo"
+                onclick="saveMovieNameLocalStorage(this)"
               />
               <figcaption>Ordinary Angles (2024)</figcaption>
             </figure>
@@ -308,13 +321,14 @@
           </a>
         </article>
         <article class="movie">
-          <h5>8</h5>
+          <h5>Movie</h5>
           <a href="#">
             <figure class="movie-content">
               <img
                 src="../images/art_of_love.png"
                 alt="Art of Love (2024)"
                 class="movie-photo"
+                onclick="saveMovieNameLocalStorage(this)"
               />
               <figcaption>Art of Love (2024)</figcaption>
             </figure>
@@ -326,13 +340,14 @@
           </a>
         </article>
         <article class="movie">
-          <h5>9</h5>
+          <h5>Movie</h5>
           <a href="#">
             <figure class="movie-content">
               <img
                 src="../images/king_kong.png"
                 alt="King Kong (2005)"
                 class="movie-photo"
+                onclick="saveMovieNameLocalStorage(this)"
               />
               <figcaption>King Kong (2005)</figcaption>
             </figure>
@@ -344,13 +359,14 @@
           </a>
         </article>
         <article class="movie">
-          <h5>10</h5>
+          <h5>Movie</h5>
           <a href="#">
             <figure class="movie-content">
               <img
                 src="../images/money_talks.png"
                 alt="Money Talks (1997)"
                 class="movie-photo"
+                onclick="saveMovieNameLocalStorage(this)"
               />
               <figcaption>Money Talks (1997)</figcaption>
             </figure>
@@ -363,7 +379,6 @@
         </article>
       </section>
     </main>
-
     <footer class="footer">
       <section class="footer-1">
         <h2 id="about">Help & Policy</h2>
@@ -386,7 +401,7 @@
         <h2>&copy; Modify| All rights reserved</h2>
       </section>
     </footer>
-
-    <script src="../scripts/homePage.js"></script>
+    <script src="../scripts/script.js"></script>
+    <script src="../scripts/home.js"></script>
   </body>
 </html>

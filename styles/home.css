@@ -78,4 +78,5 @@ caption {
   text-transform: uppercase;
   background-color: #eaf6f6;
   border-radius: 5px;
+  border: 1px solid black;
 }

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movify - Movies & Serials</title>
+    <link rel="stylesheet" type="text/css" href="../styles/shared.css" />
+    <link rel="stylesheet" type="text/css" href="../styles/movie.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <img src="../images/logo.png" alt="logo" />
+        </div>
+        <ul>
+          <li>
+            <a href="home.html"
+              ><img
+                src="../images/movie_logo.png"
+                alt="movies"
+                class="navbar_logo"
+              />Filma</a
+            >
+          </li>
+          <li>
+            <a href="series.html"
+              ><img
+                src="../images/series_logo.png"
+                alt="series"
+                class="navbar_logo"
+              />Seriale</a
+            >
+          </li>
+          <li>
+            <a href="favourite.html"
+              ><img
+                src="../images/white_heart.png"
+                alt="favourites"
+                class="navbar_logo"
+              />Favoritët</a
+            >
+          </li>
+        </ul>
+        <div class="search_profile">
+          <a href="#"
+            ><img
+              src="../images/user.png"
+              alt="profile"
+              class="search_profile_logo"
+          /></a>
+        </div>
+        <div class="hamburger">
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </div>
+      </nav>
+      <aside class="menubar">
+        <ul>
+          <li>
+            <a href="home.html" class="selected"
+              ><img
+                src="../images/movie_logo.png"
+                alt="movies"
+                class="navbar_logo"
+              />Filma</a
+            >
+          </li>
+          <li>
+            <a href="series.html"
+              ><img
+                src="../images/series_logo.png"
+                alt="series"
+                class="navbar_logo"
+              />Seriale</a
+            >
+          </li>
+          <li>
+            <a href="favourite.html"
+              ><img
+                src="../images/white_heart.png"
+                alt="favourites"
+                class="navbar_logo"
+              />Favoritët</a
+            >
+          </li>
+        </ul>
+      </aside>
+    </header>
+    <main class="container">
+      <section id="side">
+        <h2>SUGGESTIONS</h2>
+        <div id="movies-suggestions">
+          <iframe
+            height="315"
+            src="https://www.youtube.com/embed/HNdrL6S3CfY?si=cm3kRcAgdhc7McvH"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div>
+          <iframe
+            height="315"
+            src="https://www.youtube.com/embed/t9dEgHpCNJE"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+          <!--<iframe
+            src="https://api.wo-cloud.com/content/widget/?geoObjectKey=6112695&language=en&region=US&timeFormat=HH:mm&windUnit=mph&systemOfMeasurement=imperial&temperatureUnit=fahrenheit"
+            title="Weather"
+            scrolling="no"
+            height="315"
+            style="border: 1px solid #10658e; border-radius: 8px"
+          ></iframe>-->
+        </div>
+      </section>
+      <section id="movie_section">
+        <h2 id="movie-title">Title</h2>
+        <iframe
+          id="movie-video"
+          height="400"
+          title="YouTube video player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+        <div class="like-comment">
+          <input type="text" placeholder="Type a comment" /><img
+            alt="send"
+            src="../images/send.png"
+          /><img
+            alt="like"
+            src="../images/heart.png"
+            id="like"
+            onclick="likeOrDislike(this)"
+          />
+          <img
+            alt="dislike"
+            id="dislike"
+            src="../images/heart_red.png"
+            class="red"
+            onclick="likeOrDislike(this)"
+            style="display: none"
+          />
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <section class="footer-1">
+        <h2 id="about">Help & Policy</h2>
+        <ul>
+          <li><a href="#">Terms & Conditions</a></li>
+          <li><a href="#">Settings</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </section>
+      <section class="footer-2">
+        <h2 id="contact">FOLLOW US</h2>
+        <div class="social-icons">
+          <img src="../images/twitter-sign.png" alt="twitter" />
+          <img src="../images/instagram.png" alt="instagram" />
+          <img src="../images/facebook.png" alt="facebook" />
+          <img src="../images/youtube.png" alt="youtube" />
+        </div>
+      </section>
+      <section class="powered">
+        <h2>&copy; Modify| All rights reserved</h2>
+      </section>
+    </footer>
+    <script src="../scripts/script.js"></script>
+    <script src="../scripts/movie.js"></script>
+  </body>
+</html>

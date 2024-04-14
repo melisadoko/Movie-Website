@@ -1,11 +1,3 @@
-const mobileNav = document.querySelector(".hamburger");
-const navbar = document.querySelector(".menubar");
-const toggleNav = () => {
-  navbar.classList.toggle("active");
-  mobileNav.classList.toggle("hamburger-active");
-};
-mobileNav.addEventListener("click", () => toggleNav());
-
 (function () {
   const second = 1000,
     minute = second * 60,
@@ -37,3 +29,5 @@ mobileNav.addEventListener("click", () => toggleNav());
       }
     }, 0);
 })();
+
+
