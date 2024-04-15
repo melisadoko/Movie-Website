@@ -21,7 +21,6 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("movie-video").src = movie.src;
     document.getElementById("description").innerText = movie.desc;
   }
-  const favourites = JSON.parse(localStorage.getItem("favourites"));
 });
 
 function likeOrDislike(element) {
@@ -49,4 +48,8 @@ function likeOrDislike(element) {
   }
   // Save the modified array back into localStorage
   localStorage.setItem("favourites", JSON.stringify(favMovies));
+}
+
+function sendMessage() {
+  document.getElementById("comment-input").value = "";
 }

@@ -135,9 +135,14 @@
         <div class="below-trailer">
           <span id="description"></span>
           <span class="like-comment">
-            <input type="text" placeholder="Type a comment" /><img
+            <input
+              type="text"
+              placeholder="Send a comment"
+              id="comment-input" /><img
               alt="send"
-              src="../images/send.png" /><img
+              src="../images/send.png"
+              id="send"
+              onclick="sendMessage()" /><img
               alt="like"
               src="../images/heart.png"
               id="like"
