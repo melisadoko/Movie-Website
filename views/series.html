@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movify - Movies & Serials</title>
+    <link rel="stylesheet" type="text/css" href="../styles/shared.css" />
+    <link rel="stylesheet" type="text/css" href="../styles/home.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <img src="../images/logo.png" alt="logo" />
+        </div>
+        <ul>
+          <li>
+            <a href="home.html"
+              ><img
+                src="../images/movie_logo.png"
+                alt="movies"
+                class="navbar_logo"
+              />Filma</a
+            >
+          </li>
+          <li>
+            <a href="series.html" class="selected"
+              ><img
+                src="../images/series_logo.png"
+                alt="series"
+                class="navbar_logo"
+              />Seriale</a
+            >
+          </li>
+          <li>
+            <a href="favourite.html"
+              ><img
+                src="../images/white_heart.png"
+                alt="favourites"
+                class="navbar_logo"
+              />Favoritët</a
+            >
+          </li>
+        </ul>
+        <div class="search_profile">
+          <input
+            type="text"
+            id="search_input"
+            onkeypress="handleSearchKeyPress(event)"
+            placeholder="Search"
+          />
+          <img
+            src="../images/search.png"
+            alt="search"
+            id="search_icon"
+            class="search_profile_logo"
+            onclick="searchMovies()"
+          />
+          <a href="#"
+            ><img
+              src="../images/user.png"
+              alt="profile"
+              class="search_profile_logo"
+          /></a>
+        </div>
+        <div class="hamburger">
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </div>
+      </nav>
+      <aside class="menubar">
+        <ul>
+          <li>
+            <a href="home.html" class="selected"
+              ><img
+                src="../images/movie_logo.png"
+                alt="movies"
+                class="navbar_logo"
+              />Filma</a
+            >
+          </li>
+          <li>
+            <a href="series.html"
+              ><img
+                src="../images/series_logo.png"
+                alt="series"
+                class="navbar_logo"
+              />Seriale</a
+            >
+          </li>
+          <li>
+            <a href="favourite.html"
+              ><img
+                src="../images/white_heart.png"
+                alt="favourites"
+                class="navbar_logo"
+              />Favoritët</a
+            >
+          </li>
+        </ul>
+      </aside>
+    </header>
+    <main class="container">
+      <div class="parallax">
+        <article id="calendar">
+          <h2 id="calendar_text">Edhe pak ditë:</h2>
+          <p>Upcomig: <span>"Civil War" 20/04/2024</span></p>
+          <table>
+            <caption>
+              April 2024
+            </caption>
+            <thead>
+              <tr>
+                <th>Sun</th>
+                <th>Mon</th>
+                <th>Tue</th>
+                <th>Wed</th>
+                <th>Thu</th>
+                <th>Fri</th>
+                <th>Sat</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td colspan="5"></td>
+                <td>1</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td>11</td>
+                <td>12</td>
+                <td>13</td>
+                <td>14</td>
+                <td>15</td>
+                <td>16</td>
+              </tr>
+              <tr>
+                <td>17</td>
+                <td>18</td>
+                <td>19</td>
+                <td>20</td>
+                <td>21</td>
+                <td>22</td>
+                <td>23</td>
+              </tr>
+              <tr>
+                <td>24</td>
+                <td>25</td>
+                <td>26</td>
+                <td>27</td>
+                <td>28</td>
+                <td>29</td>
+                <td id="movieDate">30</td>
+              </tr>
+              <tr>
+                <td>31</td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+              </tr>
+            </tbody>
+          </table>
+          <div id="countdown">
+            <p id="movie_released"></p>
+            <ul id="content">
+              <li><span id="days"></span> ditë</li>
+              <li><span id="hours"></span> orë</li>
+              <li><span id="minutes"></span> minuta</li>
+              <li><span id="seconds"></span> sekonda</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+      <section class="movie_section">
+        <h2>SERIALET E FUNDIT</h2>
+        <article class="movie">
+          <h5>Series</h5>
+          <a href="#">
+            <figure class="movie-content">
+              <img src="../images/echo.png" alt="Echo" class="movie-photo" />
+              <figcaption>Echo</figcaption>
+            </figure>
+            <div>
+              <span>Sezoni 1</span>
+              <span>Episodi 4</span>
+            </div>
+          </a>
+        </article>
+        <article class="movie">
+          <h5>Series</h5>
+          <a href="#">
+            <figure class="movie-content">
+              <img
+                src="../images/asbest.png"
+                alt="Asbest"
+                class="movie-photo"
+              />
+              <figcaption>Asbest</figcaption>
+            </figure>
+            <div>
+              <span>Sezoni 1</span>
+              <span>Episodi 4</span>
+            </div>
+          </a>
+        </article>
+        <article class="movie">
+          <h5>Series</h5>
+          <a href="#">
+            <figure class="movie-content">
+              <img
+                src="../images/berlin.png"
+                alt="Berlin"
+                class="movie-photo"
+              />
+              <figcaption>Berlin</figcaption>
+            </figure>
+            <div>
+              <span>Sezoni 1</span>
+              <span>Episodi 2</span>
+            </div>
+          </a>
+        </article>
+        <article class="movie">
+          <h5>Series</h5>
+          <a href="#">
+            <figure class="movie-content">
+              <img
+                src="../images/shop_for_killers.png"
+                alt="A Shop for Killers"
+                class="movie-photo"
+              />
+              <figcaption>A Shop for Killers</figcaption>
+            </figure>
+            <div>
+              <span>Sezoni 1</span>
+              <span>Episodi 1</span>
+            </div>
+          </a>
+        </article>
+        <article class="movie">
+          <h5>Series</h5>
+          <a href="#">
+            <figure class="movie-content">
+              <img src="../images/flint.jpg" alt="Flint" class="movie-photo" />
+              <figcaption>Flint</figcaption>
+            </figure>
+            <div>
+              <span>Sezoni 1</span>
+              <span>Episodi 4</span>
+            </div>
+          </a>
+        </article>
+      </section>
+    </main>
+    <footer class="footer">
+      <section class="footer-1">
+        <h2 id="about">Help & Policy</h2>
+        <ul>
+          <li><a href="#">Terms & Conditions</a></li>
+          <li><a href="#">Settings</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </section>
+      <section class="footer-2">
+        <h2 id="contact">FOLLOW US</h2>
+        <div class="social-icons">
+          <img src="../images/twitter-sign.png" alt="twitter" />
+          <img src="../images/instagram.png" alt="instagram" />
+          <img src="../images/facebook.png" alt="facebook" />
+          <img src="../images/youtube.png" alt="youtube" />
+        </div>
+      </section>
+      <section class="powered">
+        <h2>&copy; Modify| All rights reserved</h2>
+      </section>
+    </footer>
+    <script src="../scripts/script.js"></script>
+    <script src="../scripts/home.js"></script>
+  </body>
+</html>
