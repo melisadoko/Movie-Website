@@ -1,22 +1,98 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../styles/homePage.css" />
-    <link rel="stylesheet" href="../styles/signUp.css" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/shared.css">
+    <link rel="stylesheet" href="../styles/signUp.css">
     <title> Create your Account</title>
 </head>
-<body>
-<header>
-    <header>
-        <nav id="navbar">
-          <aside id="important_access_navbar">
-            <a href="#" id="login"><img src="../images/user.png" />Log In</a>
-            <i class="bi bi-list toggle-for-mobile" style="float: right;"></i>
-          </aside>
-        </nav>
-      </header>
-</header>
+<body id="SU_body">
+  <header class="SU_header">
+    <nav>
+        <a href="#" class="logIn"
+          ><img
+            src="../images/user.png"
+            alt="profile"
+            class="navbar_logo"
+        />Log In</a>
+      </div>
+    </nav>
+  </header>
+  <main id="SU_main">
+    <h2>Create your Account</h2>
+    <form action="./homePage.html" target="_self" method="POST" name="createAccount" id="createAccount">
+      <div>
+        <label for="name">Name</label>
+        <input class="text_inputs" type="text" id="name" name="name" placeholder="Enter your name" maxlength="20" required>
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input class="text_inputs" type="email" placeholder="Enter your mail" id="email" name="email" required>
+      </div>
+      <div>
+        <label for="phone">Phone number</label>
+        <input class="text_inputs" type="tel" id="phone" name="phone" placeholder="06x xxx xxxx" pattern="06[7-9][0-9]{7}" maxlength="10" required>
+      </div>
+      <div>
+        <label for="password">Password</label>
+        <input class="text_inputs" type="password" placeholder="Password" id="password" name="password" required>
+      </div>
+      <div>
+        <label for="confirmPwd">Confirm Password</label>
+        <input class="text_inputs" type="password" placeholder="Confirm password" id="confirmPwd" name="confirmPwd" required>
+      </div>
+      <div>
+        <label for="birthDay">Birthday</label>
+        <input class="text_inputs" type="date" id="birthDay" name="birthDay" required>
+      </div>
+      <div>
+        <label for="Gender">Gender</label>
+        <div class="aligned_inputs">
+          <input type="radio" id="Male" name="Gender" value="Male"><label for="Male">Male</label>
+        </div>
+        <div class="aligned_inputs"> 
+          <input type="radio" id="Female" name="Gender" value="Female"><label for="Female">Female</label>
+        </div>
+      </div>
+      <div id="input-div">
+        <input type="file" id="upload-input" name="upload-input" onchange="UploadImg(event)">
+        <label for="upload-input">Upload Profile Icon</label>
+        <div id="default_profile_pic">
+        </div>
+      </div>
+      <div class="aligned_inputs">
+        <label for="AcceptTD"><input type="checkbox" id="AcceptTD" name="AcceptTD" required>Accept Terms and Conditions</label>
+      </div>
+      <div id="butoni">
+      <button id="create_account" type="submit">Create</button>
+      </div>
+      </form>
+  </main>
+
+  <footer class="footer">
+    <section class="footer-1">
+      <h2 id="about">Help & Policy</h2>
+      <ul>
+        <li><a href="#">Terms & Conditions</a></li>
+        <li><a href="#">Settings</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </section>
+    <section class="footer-2">
+      <h2 id="contact">FOLLOW US</h2>
+      <div class="social-icons">
+        <img src="../images/twitter-sign.png" alt="twitter" />
+        <img src="../images/instagram.png" alt="instagram" />
+        <img src="../images/facebook.png" alt="facebook" />
+        <img src="../images/youtube.png" alt="youtube" />
+      </div>
+    </section>
+    <section class="powered">
+      <h2>&copy; Modify| All rights reserved</h2>
+    </section>
+  </footer>
+  <script src="../scripts/signUp.js"></script>
 </body>
 </html>
