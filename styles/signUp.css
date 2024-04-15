@@ -61,15 +61,6 @@ nav{
         background-color: transparent;
     }
 
-    @media screen and (max-width: 768px) {
-        #SU_main{
-                width: 80%;
-        }
-        #input-div{
-            flex-direction: column;
-        }
-    }
-
 input[type=file]{ 
     display: none;
  }
@@ -128,4 +119,20 @@ label[for='upload-input']{
 #butoni{
     display: flex;
     justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+    #input-div{
+        flex-direction: column;
+    }
+    #SU_main{
+            width: 80%;
+    }
+
+}
+
+.error_msg{
+    color: red;
+    font-size: 12px;
+    display: none;
 }

@@ -22,30 +22,37 @@
   </header>
   <main id="SU_main">
     <h2>Create your Account</h2>
-    <form action="./homePage.html" target="_self" method="POST" name="createAccount" id="createAccount">
+    <form action="/views/home.html" target="_self" method="get" name="createAccount" id="createAccount">
       <div>
         <label for="name">Name</label>
         <input class="text_inputs" type="text" id="name" name="name" placeholder="Enter your name" maxlength="20" required>
+        <p class=" error_msg" id="name_error">Name field is required.</p>
       </div>
       <div>
         <label for="email">Email</label>
         <input class="text_inputs" type="email" placeholder="Enter your mail" id="email" name="email" required>
+        <p class=" error_msg" id="email_error">Email is incorrect.</p>
       </div>
       <div>
         <label for="phone">Phone number</label>
         <input class="text_inputs" type="tel" id="phone" name="phone" placeholder="06x xxx xxxx" pattern="06[7-9][0-9]{7}" maxlength="10" required>
+        <p class=" error_msg" id="phone_error">Phone number is incorrect.</p>
       </div>
       <div>
         <label for="password">Password</label>
         <input class="text_inputs" type="password" placeholder="Password" id="password" name="password" required>
+        <p class=" error_msg" id="password_error">Your password should be at least 8 characters long at should contain at least 1 lowercase, 1 uppercase, 1 number and 1 special character.</p>
       </div>
       <div>
         <label for="confirmPwd">Confirm Password</label>
         <input class="text_inputs" type="password" placeholder="Confirm password" id="confirmPwd" name="confirmPwd" required>
+        <p class=" error_msg" id="confirmPwd_error">Your passwords do not match.</p>
+
       </div>
       <div>
         <label for="birthDay">Birthday</label>
         <input class="text_inputs" type="date" id="birthDay" name="birthDay" required>
+        <p class=" error_msg" id="birthDay_error">You should be older than 13 years old.</p>
       </div>
       <div>
         <label for="Gender">Gender</label>
@@ -55,6 +62,7 @@
         <div class="aligned_inputs"> 
           <input type="radio" id="Female" name="Gender" value="Female"><label for="Female">Female</label>
         </div>
+        <p class=" error_msg" id="Gender_error">Choose one.</p>
       </div>
       <div id="input-div">
         <input type="file" id="upload-input" name="upload-input" onchange="UploadImg(event)">
@@ -62,8 +70,11 @@
         <div id="default_profile_pic">
         </div>
       </div>
-      <div class="aligned_inputs">
-        <label for="AcceptTD"><input type="checkbox" id="AcceptTD" name="AcceptTD" required>Accept Terms and Conditions</label>
+      <div>
+        <div  class="aligned_inputs">
+          <label for="AcceptTD"><input type="checkbox" id="AcceptTD" name="AcceptTD" required>Accept Terms and Conditions</label>
+        </div>
+        <p class=" error_msg" id="AcceptTD_error">Accepting terms and Conditions is required.</p>
       </div>
       <div id="butoni">
       <button id="create_account" type="submit">Create</button>
