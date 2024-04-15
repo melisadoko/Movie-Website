@@ -34,16 +34,23 @@
   position: relative;
 }
 
+.below-trailer,
 .like-comment {
   display: flex; /* Use flexbox to align items horizontally */
   align-items: center; /* Align items vertically */
   float: right;
+  flex-wrap: wrap;
+}
+
+.below-trailer #description {
+  flex: 1; /* Allow description to take up remaining space */
+  margin-right: 10px; /* Add some space between description and input */
 }
 
 .like-comment input {
   flex: 1; /* Allow input to grow and fill available space */
   height: 40px;
-  width: 280px;
+  max-width: calc(100% - 90px); /* Limit input width to leave space for icons */
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 0.5em;
@@ -61,7 +68,15 @@
     display: none;
   }
 
-  #movie_section .butoni-koment {
+  #movie_section .below-trailer {
     flex-direction: column;
+  }
+  .like-comment input {
+    width: 20rem; /* Allow input to take full width on smaller screens */
+    margin-right: 0; /* Remove margin on smaller screens */
+  }
+
+  .like-comment img {
+    margin-right: 0.5em; /* Add some space between icons on smaller screens */
   }
 }

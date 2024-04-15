@@ -7,6 +7,7 @@
     <title>Movify - Movies & Serials</title>
     <link rel="stylesheet" type="text/css" href="../styles/shared.css" />
     <link rel="stylesheet" type="text/css" href="../styles/home.css" />
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script>
   </head>
   <body>
     <header>
@@ -45,7 +46,7 @@
         </ul>
         <div class="search_profile">
           <input
-            type="text"
+            type="search"
             id="search_input"
             onkeypress="handleSearchKeyPress(event)"
             placeholder="Search"
@@ -191,13 +192,12 @@
         <h2>FILMAT E FUNDIT</h2>
         <article class="movie">
           <h5>Movie</h5>
-          <a href="#">
+          <a href="movie.html" onclick="saveMovieNameLocalStorage(this)">
             <figure class="movie-content">
               <img
                 src="../images/kung_fu.png"
                 alt="Kung Fu Panda 4 (2024)"
                 class="movie-photo"
-                onclick="saveMovieNameLocalStorage(this)"
               />
               <figcaption>Kung Fu Panda 4 (2024)</figcaption>
             </figure>
@@ -210,13 +210,12 @@
         </article>
         <article class="movie">
           <h5>Movie</h5>
-          <a href="#">
+          <a href="movie.html" onclick="saveMovieNameLocalStorage(this)">
             <figure class="movie-content">
               <img
                 src="../images/tearsmith.png"
                 alt="The Tearsmith (2024)"
                 class="movie-photo"
-                onclick="saveMovieNameLocalStorage(this)"
               />
               <figcaption>The Tearsmith (2024)</figcaption>
             </figure>
@@ -229,13 +228,12 @@
         </article>
         <article class="movie">
           <h5>Movie</h5>
-          <a href="#">
+          <a href="movie.html" onclick="saveMovieNameLocalStorage(this)">
             <figure class="movie-content">
               <img
                 src="../images/imaginary.png"
                 alt="Imaginary (2024)"
                 class="movie-photo"
-                onclick="saveMovieNameLocalStorage(this)"
               />
               <figcaption>Imaginary (2024)</figcaption>
             </figure>
@@ -248,13 +246,12 @@
         </article>
         <article class="movie">
           <h5>Movie</h5>
-          <a href="#">
+          <a href="movie.html" onclick="saveMovieNameLocalStorage(this)">
             <figure class="movie-content">
               <img
                 src="../images/settlers.png"
                 alt="The Settlers (2023)"
                 class="movie-photo"
-                onclick="saveMovieNameLocalStorage(this)"
               />
               <figcaption>The Settlers (2023)</figcaption>
             </figure>
@@ -267,32 +264,30 @@
         </article>
         <article class="movie">
           <h5>Movie</h5>
-          <a href="#">
+          <a href="movie.html" onclick="saveMovieNameLocalStorage(this)">
             <figure class="movie-content">
               <img
-                src="../images/much_love.png"
-                alt="Too Much Love (2023)"
+                src="../images/mummies.png"
+                alt="Mummies (2023)"
                 class="movie-photo"
-                onclick="saveMovieNameLocalStorage(this)"
               />
-              <figcaption>Too Much Love (2023)</figcaption>
+              <figcaption>Mummies (2023)</figcaption>
             </figure>
             <ul>
+              <li>Animuar</li>
+              <li>Familjar</li>
               <li>Komedi</li>
-              <li>Romancë</li>
-              <li>Turk</li>
             </ul>
           </a>
         </article>
         <article class="movie">
           <h5>Movie</h5>
-          <a href="#">
+          <a href="movie.html" onclick="saveMovieNameLocalStorage(this)">
             <figure class="movie-content">
               <img
                 src="../images/scoop.png"
                 alt="Scoop (2024)"
                 class="movie-photo"
-                onclick="saveMovieNameLocalStorage(this)"
               />
               <figcaption>Scoop (2024)</figcaption>
             </figure>
@@ -305,13 +300,12 @@
         </article>
         <article class="movie">
           <h5>Movie</h5>
-          <a href="#">
+          <a href="movie.html" onclick="saveMovieNameLocalStorage(this)">
             <figure class="movie-content">
               <img
                 src="../images/ordinary_angles.png"
                 alt="Ordinary Angles (2024)"
                 class="movie-photo"
-                onclick="saveMovieNameLocalStorage(this)"
               />
               <figcaption>Ordinary Angles (2024)</figcaption>
             </figure>
@@ -322,13 +316,12 @@
         </article>
         <article class="movie">
           <h5>Movie</h5>
-          <a href="#">
+          <a href="movie.html" onclick="saveMovieNameLocalStorage(this)">
             <figure class="movie-content">
               <img
                 src="../images/art_of_love.png"
                 alt="Art of Love (2024)"
                 class="movie-photo"
-                onclick="saveMovieNameLocalStorage(this)"
               />
               <figcaption>Art of Love (2024)</figcaption>
             </figure>
@@ -341,32 +334,30 @@
         </article>
         <article class="movie">
           <h5>Movie</h5>
-          <a href="#">
+          <a href="movie.html" onclick="saveMovieNameLocalStorage(this)">
             <figure class="movie-content">
               <img
-                src="../images/king_kong.png"
-                alt="King Kong (2005)"
+                src="../images/irish_wish.png"
+                alt="Irish Wish (2024)"
                 class="movie-photo"
-                onclick="saveMovieNameLocalStorage(this)"
               />
-              <figcaption>King Kong (2005)</figcaption>
+              <figcaption>Irish Wish (2024)</figcaption>
             </figure>
             <ul>
-              <li>Aksion</li>
-              <li>Dramë</li>
-              <li>Aventurë</li>
+              <li>Komedi</li>
+              <li>Netflix</li>
+              <li>Romancë</li>
             </ul>
           </a>
         </article>
         <article class="movie">
           <h5>Movie</h5>
-          <a href="#">
+          <a href="movie.html" onclick="saveMovieNameLocalStorage(this)">
             <figure class="movie-content">
               <img
                 src="../images/money_talks.png"
                 alt="Money Talks (1997)"
                 class="movie-photo"
-                onclick="saveMovieNameLocalStorage(this)"
               />
               <figcaption>Money Talks (1997)</figcaption>
             </figure>

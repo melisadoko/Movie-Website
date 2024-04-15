@@ -132,24 +132,25 @@
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
         ></iframe>
-        <div class="like-comment">
-          <input type="text" placeholder="Type a comment" /><img
-            alt="send"
-            src="../images/send.png"
-          /><img
-            alt="like"
-            src="../images/heart.png"
-            id="like"
-            onclick="likeOrDislike(this)"
-          />
-          <img
-            alt="dislike"
-            id="dislike"
-            src="../images/heart_red.png"
-            class="red"
-            onclick="likeOrDislike(this)"
-            style="display: none"
-          />
+        <div class="below-trailer">
+          <span id="description"></span>
+          <span class="like-comment">
+            <input type="text" placeholder="Type a comment" /><img
+              alt="send"
+              src="../images/send.png" /><img
+              alt="like"
+              src="../images/heart.png"
+              id="like"
+              onclick="likeOrDislike(this)"
+              style="display: none" />
+            <img
+              alt="dislike"
+              id="dislike"
+              src="../images/heart_red.png"
+              class="red"
+              onclick="likeOrDislike(this)"
+              style="display: none"
+          /></span>
         </div>
       </section>
     </main>
