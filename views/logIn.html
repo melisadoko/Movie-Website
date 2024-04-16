@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Logohuni</title>
+    <link rel="stylesheet" type="text/css" href="../styles/logIn.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/css.gg/icons/icons.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <video autoplay muted loop class="video">
+      <source src="../videos/video.mp4" type="video/mp4" />
+    </video>
+    <h2>Movify</h2>
+    <div class="container" id="container">
+      <div class="form-container sign-in-container">
+        <form action="#">
+          <h1>Logohuni</h1>
+          <div class="social-container">
+            <a href="https://www.facebook.com" class="social"
+              ><i class="gg-facebook"></i
+            ></a>
+            <a href="https://www.google.com" class="social"
+              ><i class="gg-google"></i
+            ></a>
+          </div>
+          <span>ose perdor nje nga llogarit e tua</span>
+          <input type="email" placeholder="Email" id="email" required />
+          <input
+            type="password"
+            placeholder="Fjalëkalimi"
+            id="password"
+            required
+          />
+          <a href="#">Keni harruar fjalëkalimin?</a>
+          <button id="signIn" style="cursor: pointer">Logohu</button>
+        </form>
+      </div>
+      <div class="overlay-container">
+        <div class="overlay">
+          <div class="overlay-panel overlay-right">
+            <h1>Përshendetje</h1>
+            <p>
+              Nëse ju nuk keni një llogari, atëherë mund të regjistroheni këtu
+            </p>
+            <button class="ghost" id="signUp" style="cursor: pointer">
+              Regjistrohu
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../scripts/logIn.js"></script>
+  </body>
+</html>
