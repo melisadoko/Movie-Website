@@ -1,5 +1,4 @@
 const userData = JSON.parse(localStorage.getItem("user"));
-debugger;
 // Check if data exists
 if (userData) {
   document.getElementById("user-div").textContent =
