@@ -63,6 +63,40 @@
   margin: 0.5em;
 }
 
+.comments {
+  margin-top: 3em;
+}
+
+.comments h3 {
+  color: #ad360b;
+  margin-bottom: 10px;
+}
+
+.comments #comments-list {
+  max-height: 100px; /* Limit the height of the comments list */
+  overflow-y: scroll; /* Enable vertical scroll if the content exceeds the height */
+  list-style-type: none;
+}
+.comments #comments-list::-webkit-scrollbar {
+  width: 10px; /* Set the width of the scrollbar */
+}
+
+.comments #comments-list::-webkit-scrollbar-thumb {
+  background-color: #888; /* Color of the thumb */
+  border-radius: 5px; /* Border radius of the thumb */
+}
+/* Style for individual comment */
+.comment {
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.comment li {
+  margin: 0;
+}
+
 @media screen and (max-width: 768px) {
   #side {
     display: none;

@@ -1,3 +1,14 @@
+const userData = JSON.parse(localStorage.getItem("user"));
+debugger;
+// Check if data exists
+if (userData) {
+  document.getElementById("user-div").textContent =
+    "Përshëndetje " + userData.name;
+} else {
+  // Set default value if data doesn't exist
+  document.getElementById("user-div").textContent = "Përshëndetje Përdorues";
+}
+
 (function () {
   const second = 1000,
     minute = second * 60,
@@ -29,5 +40,3 @@
       }
     }, 0);
 })();
-
-

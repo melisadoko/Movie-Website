@@ -137,6 +137,7 @@
           <span class="like-comment">
             <input
               type="text"
+              onkeypress="handleSendImage(event)"
               placeholder="Send a comment"
               id="comment-input" /><img
               alt="send"
@@ -156,6 +157,12 @@
               onclick="likeOrDislike(this)"
               style="display: none"
           /></span>
+        </div>
+        <div class="comments">
+          <h3>Komente</h3>
+          <div id="comments-list">
+            <!-- Comments will be dynamically added here -->
+          </div>
         </div>
       </section>
     </main>
