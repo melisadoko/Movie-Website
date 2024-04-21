@@ -77,10 +77,10 @@ label[for='upload-input']{
 	border-radius: 3em;
     margin-top: 15px;
 	transition: 0.25s;
-	&:hover, &:focus, &:active {
-		background: var(--upload-button-color);
-		color: #fff;
-	}
+}
+label[for='upload-input']:hover, label[for='upload-input']:focus, label[for='upload-input']:active {
+    background: var(--upload-button-color);
+    color: #fff;
 }
 
 #default_profile_pic{
@@ -102,11 +102,13 @@ label[for='upload-input']{
     font-size: 18px;
     font-weight: 600;
     transition: 0.25s;
-    &:hover, &:focus, &:active {
-		background: var(--save-button-color);
-		color: #fff;
-	}
 }
+
+#create_account:hover, #create_account:focus, #create_account:active {
+    background: var(--save-button-color);
+    color: #fff;
+}
+
 #input-div, .aligned_inputs{
     display: flex; flex-direction: row;
     align-items: center;

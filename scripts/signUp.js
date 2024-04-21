@@ -1,17 +1,11 @@
-function UploadImg(event) {
-  var div = document.getElementById("default_profile_pic");
-  div.style.backgroundImage =
-    "url(" + URL.createObjectURL(event.target.files[0]) + ")";
-  div.style.backgroundSize = "cover";
-  localStorage.setItem(
-    "profile_pic",
-    URL.createObjectURL(event.target.files[0])
-  );
+function UploadImg(event){
+    var div=document.getElementById("default_profile_pic");
+    div.style.backgroundImage="url("+URL.createObjectURL(event.target.files[0])+")";
+    div.style.backgroundSize="cover";
+    localStorage.setItem("profile_pic", URL.createObjectURL(event.target.files[0]))
 }
 
-document
-  .getElementById("create_account")
-  .addEventListener("click", function (event) {
+document.getElementById('create_account').addEventListener('click', function(event) {
     event.preventDefault();
 
     var v_acceptTD = ValidateTerms();

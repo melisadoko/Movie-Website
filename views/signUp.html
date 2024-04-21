@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/shared.css">
     <link rel="stylesheet" href="../styles/signUp.css">
-    <title> Create your Account</title>
+    <title>Krijoni Llogarine</title>
 </head>
 <body id="SU_body">
   <header class="SU_header">
@@ -16,68 +16,67 @@
             src="../images/user.png"
             alt="profile"
             class="navbar_logo"
-        />Log In</a>
-      </div>
+        >Logohuni</a>
     </nav>
   </header>
   <main id="SU_main">
     <h2>Create your Account</h2>
     <form action="/views/home.html" target="_self" method="get" name="createAccount" id="createAccount">
       <div>
-        <label for="name">Name</label>
+        <label for="name">Emri</label>
         <input class="text_inputs" type="text" id="name" name="name" placeholder="Enter your name" maxlength="20" required>
-        <p class=" error_msg" id="name_error">Name field is required.</p>
+        <p class=" error_msg" id="name_error">Plotesoni emrin.</p>
       </div>
       <div>
         <label for="email">Email</label>
         <input class="text_inputs" type="email" placeholder="Enter your mail" id="email" name="email" required>
-        <p class=" error_msg" id="email_error">Email is incorrect.</p>
+        <p class=" error_msg" id="email_error">Email eshte i pasakte.</p>
       </div>
       <div>
-        <label for="phone">Phone number</label>
+        <label for="phone">Numri cel.</label>
         <input class="text_inputs" type="tel" id="phone" name="phone" placeholder="06x xxx xxxx" pattern="06[7-9][0-9]{7}" maxlength="10" required>
-        <p class=" error_msg" id="phone_error">Phone number is incorrect.</p>
+        <p class=" error_msg" id="phone_error">Numri i cel eshte i pasakte.</p>
       </div>
       <div>
         <label for="password">Password</label>
         <input class="text_inputs" type="password" placeholder="Password" id="password" name="password" required>
-        <p class=" error_msg" id="password_error">Your password should be at least 8 characters long at should contain at least 1 lowercase, 1 uppercase, 1 number and 1 special character.</p>
+        <p class=" error_msg" id="password_error">Password duhet te kete te pakten 8 karaktere ku te pakten nje shkronje kapitale, nje shkronje te vogel, nje numer dhe nje karakter special.</p>
       </div>
       <div>
-        <label for="confirmPwd">Confirm Password</label>
+        <label for="confirmPwd">Konfirmo password</label>
         <input class="text_inputs" type="password" placeholder="Confirm password" id="confirmPwd" name="confirmPwd" required>
-        <p class=" error_msg" id="confirmPwd_error">Your passwords do not match.</p>
+        <p class=" error_msg" id="confirmPwd_error">Password-et nuk jane te njejta.</p>
 
       </div>
       <div>
-        <label for="birthDay">Birthday</label>
+        <label for="birthDay">Ditelindja</label>
         <input class="text_inputs" type="date" id="birthDay" name="birthDay" required>
-        <p class=" error_msg" id="birthDay_error">You should be older than 13 years old.</p>
+        <p class=" error_msg" id="birthDay_error">Duhet te jeni mbi 18 vjec.</p>
       </div>
       <div>
-        <label for="Gender">Gender</label>
+        <label>Gjinia</label>
         <div class="aligned_inputs">
-          <input type="radio" id="Male" name="Gender" value="Male"><label for="Male">Male</label>
+          <input type="radio" id="Male" name="Gender" value="Male"><label for="Male">Mashkull</label>
         </div>
         <div class="aligned_inputs"> 
-          <input type="radio" id="Female" name="Gender" value="Female"><label for="Female">Female</label>
+          <input type="radio" id="Female" name="Gender" value="Female"><label for="Female">Femer</label>
         </div>
-        <p class=" error_msg" id="Gender_error">Choose one.</p>
+        <p class=" error_msg" id="Gender_error">Zgjidhni gjinine.</p>
       </div>
       <div id="input-div">
         <input type="file" id="upload-input" name="upload-input" onchange="UploadImg(event)">
-        <label for="upload-input">Upload Profile Icon</label>
+        <label for="upload-input">Ngarko foton</label>
         <div id="default_profile_pic">
         </div>
       </div>
       <div>
         <div  class="aligned_inputs">
-          <label for="AcceptTD"><input type="checkbox" id="AcceptTD" name="AcceptTD" required>Accept Terms and Conditions</label>
+          <label for="AcceptTD"><input type="checkbox" id="AcceptTD" name="AcceptTD" required>Pranoj termat dhe kushtet.</label>
         </div>
-        <p class=" error_msg" id="AcceptTD_error">Accepting terms and Conditions is required.</p>
+        <p class=" error_msg" id="AcceptTD_error">Pranimi i termave dhe i kushteve eshte i detyruar.</p>
       </div>
       <div id="butoni">
-      <button id="create_account" type="submit">Create</button>
+      <button id="create_account" type="submit">Krijo</button>
       </div>
       </form>
   </main>
@@ -94,10 +93,10 @@
     <section class="footer-2">
       <h2 id="contact">FOLLOW US</h2>
       <div class="social-icons">
-        <img src="../images/twitter-sign.png" alt="twitter" />
-        <img src="../images/instagram.png" alt="instagram" />
-        <img src="../images/facebook.png" alt="facebook" />
-        <img src="../images/youtube.png" alt="youtube" />
+        <img src="../images/twitter-sign.png" alt="twitter" >
+        <img src="../images/instagram.png" alt="instagram" >
+        <img src="../images/facebook.png" alt="facebook" >
+        <img src="../images/youtube.png" alt="youtube" >
       </div>
     </section>
     <section class="powered">
@@ -105,5 +104,6 @@
     </section>
   </footer>
   <script src="../scripts/signUp.js"></script>
+  <script src="../scripts/script.js"></script>
 </body>
 </html>

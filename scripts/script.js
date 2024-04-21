@@ -159,3 +159,27 @@ function saveMovieNameLocalStorage(element) {
   };
   localStorage.setItem("movieTitle", JSON.stringify(movieTitleObj));
 }
+
+function UploadImg(event){
+  var div=document.getElementById("default_profile_pic");
+  var url=URL.createObjectURL(event.target.files[0]);
+  div.style.backgroundImage="url("+url+")";
+  div.style.backgroundSize="cover";
+  localStorage.setItem("profile_pic", url)
+}
+
+(function(){
+  function checkProfilePic(){
+    if(localStorage.getItem("profile_pic")!=null)
+    {
+      var div=document.getElementById("default_profile_pic");
+      div.style.backgroundImage="url("+localStorage.getItem("profile_pic")+")";
+      div.style.backgroundSize="cover";
+    }
+    else{
+      var container = document.getElementById('default_profile_pic');
+      container.style.backgroundImage = "url('../images/user.png')";
+    }
+}
+checkProfilePic();
+})();
