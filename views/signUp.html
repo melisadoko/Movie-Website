@@ -9,9 +9,10 @@
     <title>Krijoni Llogarine</title>
 </head>
 <body id="SU_body">
+  <!--header me navbar-->
   <header class="SU_header">
     <nav>
-        <a href="#" class="logIn"
+        <a href="../views/logIn.html" class="logIn"
           ><img
             src="../images/user.png"
             alt="profile"
@@ -19,6 +20,7 @@
         >Logohuni</a>
     </nav>
   </header>
+  <!--ketu kemi formen main me te gjitha fushat input dhe paragrafet e errorit perkates-->
   <main id="SU_main">
     <h2>Create your Account</h2>
     <form action="/views/home.html" target="_self" method="get" name="createAccount" id="createAccount">
@@ -38,12 +40,12 @@
         <p class=" error_msg" id="phone_error">Numri i cel eshte i pasakte.</p>
       </div>
       <div>
-        <label for="password">Password</label>
+        <label for="password">Fjalekalimi</label>
         <input class="text_inputs" type="password" placeholder="Password" id="password" name="password" required>
         <p class=" error_msg" id="password_error">Password duhet te kete te pakten 8 karaktere ku te pakten nje shkronje kapitale, nje shkronje te vogel, nje numer dhe nje karakter special.</p>
       </div>
       <div>
-        <label for="confirmPwd">Konfirmo password</label>
+        <label for="confirmPwd">Konfirmo Fjalekalimin</label>
         <input class="text_inputs" type="password" placeholder="Confirm password" id="confirmPwd" name="confirmPwd" required>
         <p class=" error_msg" id="confirmPwd_error">Password-et nuk jane te njejta.</p>
 
@@ -64,6 +66,8 @@
         <p class=" error_msg" id="Gender_error">Zgjidhni gjinine.</p>
       </div>
       <div id="input-div">
+        <!--ketu eshte inputi per foton ku kur shtypet labeli per inputin
+        i cili eshte stilizuar ne pamje si buton athere behet upload i fotos-->
         <input type="file" id="upload-input" name="upload-input" onchange="UploadImg(event)">
         <label for="upload-input">Ngarko foton</label>
         <div id="default_profile_pic">
@@ -80,14 +84,14 @@
       </div>
       </form>
   </main>
-
+<!--footer-->
   <footer class="footer">
     <section class="footer-1">
       <h2 id="about">Help & Policy</h2>
       <ul>
         <li><a href="#">Terms & Conditions</a></li>
-        <li><a href="#">Settings</a></li>
-        <li><a href="#">Contact Us</a></li>
+        <li><a href="./settings.html">Settings</a></li>
+        <li><a href="./contact.html">Contact Us</a></li>
       </ul>
     </section>
     <section class="footer-2">
@@ -104,6 +108,5 @@
     </section>
   </footer>
   <script src="../scripts/signUp.js"></script>
-  <script src="../scripts/script.js"></script>
 </body>
 </html>

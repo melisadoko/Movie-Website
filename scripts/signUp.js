@@ -1,10 +1,21 @@
+// ky funksion ben ngarkimin e fotos se profilit dhe ruajtjes se blobit ne localStorage
 function UploadImg(event){
+    var imageExtensions = ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'svg', 'webp'];
+    var filename=event.target.files[0].name
+    var ext=filename.substring(filename.lastIndexOf('.')+1);
+    ext=ext.toLowerCase();
+    
+    if(imageExtensions.includes(ext)){    
     var div=document.getElementById("default_profile_pic");
-    div.style.backgroundImage="url("+URL.createObjectURL(event.target.files[0])+")";
+    var url=URL.createObjectURL(event.target.files[0]);
+    div.style.backgroundImage="url("+url+")";
     div.style.backgroundSize="cover";
-    localStorage.setItem("profile_pic", URL.createObjectURL(event.target.files[0]))
+    localStorage.setItem("profile_pic", url)
+  }
 }
 
+//ky funksion behet trigger ne momentin qe shtypet butoni krijo
+//behet kontrolli percdo fushe dhe me pas behet redirect te home page
 document.getElementById('create_account').addEventListener('click', function(event) {
     event.preventDefault();
 
@@ -32,6 +43,7 @@ document.getElementById('create_account').addEventListener('click', function(eve
     }
   });
 
+  //ketu behet krijimi i objektit te js per tu ruajtur ne localStorage
 function getUserData() {
   return {
     name: document.getElementById("name").value,
@@ -42,6 +54,7 @@ function getUserData() {
     gender: document.querySelector('input[name="Gender"]:checked').value,
   };
 }
+//ketu behet validimi i radio button per gjinine
 function ValidateGender() {
   var gender = document.querySelector('input[name="Gender"]:checked');
   var g_value = gender == null ? null : gender.value;
@@ -50,7 +63,7 @@ function ValidateGender() {
   ValidationStyling(document.getElementById("Male"), check, "Gender_error");
   return check;
 }
-
+//ketu behet validimi per checkboxin e termave dhe kushteve
 function ValidateTerms() {
   var acceptTD = document
     .getElementById("AcceptTD")
@@ -67,6 +80,7 @@ function ValidateTerms() {
   return check;
 }
 
+//ketu behet validimi per emrin
 function ValidateName() {
   var name = document.getElementById("name").value;
   var check = false;
@@ -77,6 +91,7 @@ function ValidateName() {
   return check;
 }
 
+//ketu behet validimi me regex per email
 function ValidateEmail() {
   var email = document.getElementById("email").value;
   email_regex = /[a-zA-Z0-9_.]{5,30}@[a-zA-Z]{2,10}(\.[a-zA-Z]{3}){1,2}/;
@@ -89,6 +104,7 @@ function ValidateEmail() {
   return check;
 }
 
+//ketu behet validimi me regex per nr celularit
 function ValidatePhone() {
   var phone = document.getElementById("phone").value;
   phone_regex = /06[7-9][0-9]{7}/;
@@ -102,6 +118,7 @@ function ValidatePhone() {
   return check;
 }
 
+//ketu behet validimi me regex per passwordin
 function ValidatePassword() {
   var password = document.getElementById("password").value;
   password_regex =
@@ -119,7 +136,7 @@ function ValidatePassword() {
 
   return check;
 }
-
+//ketu behet kontrolli mes 2 fushave te password
 function MatchPassword() {
   var password = document.getElementById("password").value;
   var password2 = document.getElementById("confirmPwd").value;
@@ -136,6 +153,7 @@ function MatchPassword() {
   return check;
 }
 
+//ketu behet validimi per ditlindjen nqs perdoruesi eshte te pakten 13 vjec
 function ValidateBirthday() {
   var bDay = document.getElementById("birthDay").value;
   var check = false;
@@ -157,6 +175,8 @@ function ValidateBirthday() {
   return check;
 }
 
+//ketu behet stilimi nqs jane plotesuar fushat sakte ose gabim
+//nqs jan plotesuar gabim shtohet mesazhi i errorit
 function ValidationStyling(objekti, lloji, error) {
   var e = document.getElementById(error).style;
   if (objekti.classList.contains("text_inputs")) {
@@ -202,6 +222,8 @@ function ValidationStyling(objekti, lloji, error) {
     }
   }
 
+  //ketu i eshte shtuar cdo fushe input me tekst nje listener qe ne cdo moment qe behet
+  //focus out te kontrollohet fusha perkatese
   var inputs = document.getElementsByClassName("text_inputs");
   Array.from(inputs).forEach(function (input) {
     input.addEventListener("focusout", handleFocusOut);

@@ -1,4 +1,40 @@
 (function(){
+    //ky funksion do egzekutohet ne cdo file qe do jete profile pic dhe do ngarkohet fotoja jone
+    //ose fotoja e marre nga imazhet ne projektin tone
+    function checkProfilePic(){
+      if(localStorage.getItem("profile_pic")!=null)
+      {
+        var div=document.getElementById("default_profile_pic");
+        div.style.backgroundImage="url("+localStorage.getItem("profile_pic")+")";
+        div.style.backgroundSize="cover";
+      }
+      else{
+        var container = document.getElementById('default_profile_pic');
+        container.style.backgroundImage = "url('../images/user.png')";
+      }
+  }
+  checkProfilePic();
+  })();
+
+  // ky funksion ben ngarkimin e fotos se profilit dhe ruajtjes se blobit ne localStorage
+  function UploadImg(event){
+      var imageExtensions = ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'svg', 'webp'];
+      var filename=event.target.files[0].name
+      var ext=filename.substring(filename.lastIndexOf('.')+1);
+      ext=ext.toLowerCase();
+      
+      if(imageExtensions.includes(ext)){    
+      var div=document.getElementById("default_profile_pic");
+      var url=URL.createObjectURL(event.target.files[0]);
+      div.style.backgroundImage="url("+url+")";
+      div.style.backgroundSize="cover";
+      localStorage.setItem("profile_pic", url)
+    }
+  }
+  
+(function(){
+    //ketu kemi nje funksion qe egzekutohet ne cdo load te faqes
+    //kemi vlerat data te chartit te pare ku perdorim chart js
     const data = {
         labels: ['Aksion', 'Komedi', 'Dramë', 'Fantashkencë', 'Horror', 'Aventurë'],
         datasets: [{
@@ -23,6 +59,8 @@
         }]
     };
     
+    //ketu eshte konfigurimi i chartit te pare, qe do jete i tipit doughnut, i japim te dhenat
+    //dhe i vendosim titullin
     const config = {
         type: 'doughnut',
         data: data,
@@ -41,11 +79,11 @@
         },
     };
     
+    //ketu krijohet charti ku merret elementi me id 'genre_chart'
     var myChart = new Chart(document.getElementById('genre_chart'),config);
 
-
-
-
+    //njelloj si per chartin e mesiperm ketu kemi vlerat per chartin tjeter por ketu kemi ndryshim
+    // sepse charti do jete me kolona 
     const data2 = {
         labels: ['E hënë', 'E martë', 'E mërkurë', 'E enjte', 'E premte', 'E shtunë', 'E dielë'],
         datasets: [{
@@ -57,6 +95,7 @@
         }]
     };
     
+    //bejme konfigurimin e chartit te dyte qe do jete me kolona
     const config2 = {
         type: 'bar',
         data: data2,
@@ -84,28 +123,46 @@
         },
     };
     
+    //ketu e krijojme chartin e dyte per perdorimin e websitet gjate javes se fundit
     var myChart2 = new Chart(
         document.getElementById('time_spent_chart'),config2);
 
-    function GetName(){
+        //ketu marrim informacionet nga localStorage per te mbushur me te dhena pamjen
+        //perdoret localStorage ne mungesen e pjese back-end
+    function GetInfo(){
+        
         var user=localStorage.getItem("user");
         var text='Perdorues';
         if(user!=null)
         {
-            if(user.name!=null)
-            text=user.name;
+            if(JSON.parse(user).name!=null)
+            text=JSON.parse(user).name;
+            if(JSON.parse(user).gender=='Male')
+            {
+                document.getElementById("male").style.display="inline";
+            }
+            else{
+                document.getElementById("female").style.display="inline";
+            }
+            document.getElementById('email').innerText=JSON.parse(user).email;
+            document.getElementById('phone_number').innerText=JSON.parse(user).phone;
+            document.getElementById('birthday').innerText=JSON.parse(user).birthDay;
+
         }
-        document.getElementById('name').textContent=text;
+        document.getElementById('name').innerText=text;
     }  
-    GetName();
+    GetInfo();
 })();
 
+//ky eshte funksioni per heqjen e fotos se vendosur nga ne dhe vendosjes se nje fotoje gjenerike
 function removePhoto(){
     var container = document.getElementById('default_profile_pic');
     container.style.backgroundImage = "url('../images/user.png')";
     localStorage.removeItem('profile_pic');
 }
 
+// te ky funksion bejme stilizimin e fushave input ne varesi te neqofte se jane fusha tekst
+// dhe nese jane plotesuar ne rregull ose jo. gjithashtu kalohet si parameter edhe id e errorit qe ka secila fushe
   function ValidationStyling(objekti, lloji, error){
     var e=document.getElementById(error).style
 if(objekti.classList.contains("text_inputs"))
@@ -131,6 +188,8 @@ if(objekti.classList.contains("text_inputs"))
 }
 }
 
+//ne kete funksion behet validimi i passowrdit me regex
+//qe te kete te pakten 8 karaktere, 1 shkronje te madhe, 1 te vogel, 1 numer dhe 1 karakter special
 function ValidateNewPswd(){
     var password=document.getElementById('new_pswd').value;
     password_regex=/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%.,*?&])[A-Za-z\d@$.,!%*?&]{8,}$/;
@@ -145,6 +204,7 @@ function ValidateNewPswd(){
     return check;
 }
 
+//ketu behet kontrolli i passowrdit ne fushen 'konfirmo fjalekalimin' me ate nje fushe me siper
 function ConfirmNewPswd(){
     var password=document.getElementById('new_pswd').value;
     var password2=document.getElementById('confirm_new_pswd').value;
@@ -158,9 +218,10 @@ function ConfirmNewPswd(){
     return check;
 }
 
+// ketu merret vlera e passwordit nga localStorage dhe kontrollohet me vleren e vendosur ne fushen per fjalekalimin egzistues
 function ValidateOldPswd(){
     var oldPswd=document.getElementById('existing_pswd').value;
-    var userPswd=localStorage.getItem("user").password;
+    var userPswd=JSON.parse(localStorage.getItem("user")).password;
     var check=false;
     if(oldPswd===userPswd)
     check=true;
@@ -168,6 +229,7 @@ function ValidateOldPswd(){
 return check;
 }
 
+//ketu validohet numri i telefonit sipas standartit kombetar shqipetar
 function ValidatePhone(){
     var phone=document.getElementById('phone').value;
     phone_regex=/06[7-9][0-9]{7}/;
@@ -182,10 +244,11 @@ function ValidatePhone(){
     return check;
 }
 
-
+//ky funksion behet trigger ne momentin qe shtypim butonin e ruajtjes se ndryshimeve dhe kontrollohen te gjitha fushat
+// dhe behet ndryshimi tek vlerat e localStorage dhe gjithashtu nje reload i faqes
 document.getElementById('save_changes').addEventListener('click', function(event) {
     event.preventDefault();
-    debugger
+    
     var user=JSON.parse(localStorage.getItem("user"));
     var v_phone=true;
     if(document.getElementById('phone').value!='')
@@ -221,7 +284,8 @@ var check = v_phone && v_password && v_password2 && v_old_password;
 
     if(check)
     {
-        localStorage.setItem('user', user)
-        document.getElementById('createAccount').submit();
+        localStorage.setItem('user', JSON.stringify(user));
+        location.reload()
+
     }
 });

@@ -1,5 +1,5 @@
+/*stilizim per foton e profilit*/
 #default_profile_pic{
-    background-image:url("../images/user.png");
     background-size: cover;
     border: 1px solid black;
     height: 15.5em;
@@ -7,6 +7,8 @@
     border-radius: 50%;
 }
 
+/*stilizim per bodyn, nje pjese eshte default ndersa kemi edhe pjesen e d
+display dhe background qe eshte specifike per faqen*/
 #P_body{
     margin: 0;
     padding: 0;
@@ -17,7 +19,7 @@
     justify-content: center;
     background-color: #d6d6d6;
 }
-
+/*stilizim per mainin*/
 #P_main{
     display: flex;
     flex-direction: column;
@@ -37,7 +39,7 @@
     text-align: center;
     margin-top: 10px;
 }
-
+/*stilizim per butonat poshte fotos*/
 .photo_button{
 
     width: 8em;
@@ -74,12 +76,53 @@
     color: #fff;
 }
 
+/*stilizimet per butonin ruaj ndryshimet*/
+#save_changes{
+    width: 12em;
+    padding: 10px;
+    background-color: transparent;
+    border-radius: 2em;
+    border: 2px solid #5783db;
+    font-size: 18px;
+    font-weight: 600;
+    transition: 0.25s;
+    margin-top: 10px;
+    justify-content: center;
+    color:#5783db;
+}
+
+#save_changes:hover,  #save_changes:active {
+    background: #5783db;
+    color: white;
+}
+
+/*stilizime per 2 seksionet charts dhe ndryshimet e te dhenave*/
 #charts{
     background-color: #ECECEC;
     padding: 40px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin:10px 0px;
+    width: 80%;
+}
+
+#s1{
+    background-color: #ECECEC;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin:10px 0px;
+}
+
+#change_info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ECECEC;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin:30px 0px;
     width: 80%;
 }
 
@@ -93,22 +136,27 @@
     margin-top: 50px;
 }
 
+form{
+    width: 100%;
+}
 form>div{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     margin: 20px auto;
+    width: 100%;
 }
 
 form>div>input{
-    margin: 10px auto;
-    background-color: transparent;
-    width: 30em;
-    border: 0;
+    width: 100%;
+    padding: 10px;
+    border:0;
+    border-bottom: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
     outline: none;
-    border-bottom: 2px solid black;
-    font-size: 16px;
+    background-color: transparent;
+    margin: 15px 0px;
 }
 
 .error_msg{
@@ -117,8 +165,27 @@ form>div>input{
     display: none;
 }
 
+/*ndryshime per informacionet e perdoruesit*/
+svg{
+    display: none;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+#name_gender_container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+span{
+    margin-top: 10px;
+}
+/*stilizimi kur ndryshon madhesia e ekranit
+per krijimin e responsivitetit*/
 @media screen and (max-width: 768px) {
-#charts{
+#charts, #change_info{
     background-color: transparent;
     border-radius: 0;
     box-shadow: none;

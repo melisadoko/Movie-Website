@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,800");
+body{
+background-color: #ECECEC;
+}
+
+#S_main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin:10px 10%;
+    width: 80%;
+}
+section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0px 20px 0px;
+    border-bottom: 1px solid black;
+}
+/*vendosja ne te majte ose te djathte te elementeve*/
+  .left {
+    float: left;
+  }
+  
+  .right {
+    float: right;
+  }
+  .container_s{
+    width: 100%;
+    margin: 15px 0px;
+  }
+
+  label, p{
+    font-size: 16px;
+  }
+  /*stilizim i dropdownit*/
+  .select{
+    width: 8em;
+    border: 2px solid gray;
+    border-radius: 0.3em;
+    font-size: 18px;
+    background-color: transparent;
+    outline: none;
+  }
+  /*pozicionimi i butonit toggle*/
+  .toggle {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+ /*fhsehja e checkboxit*/
+.toggle input {
+    display: none;
+}
+ /*krijimi i pamjes se sliderit*/
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: gray;
+    transition: .4s;
+    border-radius: 34px;
+}
+ /*krijimi i topit qe leviz*/
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+ /*stilizimi kur klikojme ne slider*/
+input:checked+.slider {
+    background-color: green;
+}
+ 
+input:checked+.slider:before {
+    transform: translateX(26px);
+}
+
+label, option, p, h2{
+    font-family: "Montserrat", sans-serif;
+}
+
+/*stilizimi i butonit log out*/
+#logout{
+    width: 8em;
+    padding: 10px;
+    background-color: transparent;
+    border-radius: 2em;
+    border:solid rgb(185, 41, 41);
+    font-size: 18px;
+    font-weight: 600;
+    transition: 0.25s;
+    margin-top: 10px;
+    color: rgb(185, 41, 41);
+    justify-content: center;
+}
+
+#logout:hover,  #logout:active {
+    background: rgb(185, 41, 41);
+    color: #fff;
+}
+
+/*krijimi i pamjes responsive*/
+@media screen and (max-width: 768px) {
+section>div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3em;
+}
+label, option, p, h2{
+    text-align: center;
+}
+}

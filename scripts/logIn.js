@@ -7,17 +7,9 @@ signUpButton.addEventListener("click", function () {
   window.location.href = "../views/signUp.html";
 });
 
-var storedEmail = localStorage.getItem("email");
-var storedPassword = localStorage.getItem("password");
-if (storedEmail && storedPassword) {
-  email.value = storedEmail;
-  password.value = storedPassword;
-  window.location.href = "../views/home.html";
-}
-
 signInButton.addEventListener("click", function (event) {
   event.preventDefault();
-
+  var user=JSON.parse(localStorage.getItem('user'))
   var emailInput = email.value;
   var passwordInput = password.value;
 
@@ -28,7 +20,7 @@ signInButton.addEventListener("click", function (event) {
   }
 
   // nese email dhe password jane keto qe kemi deklaruar
-  if (emailInput === "admin@hotmail.com" && passwordInput === "admin") {
+  if (emailInput === user.email && passwordInput === user.password) {
     localStorage.setItem("email", emailInput);
     localStorage.setItem("password", passwordInput);
     window.location.href = "../views/home.html";
