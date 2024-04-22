@@ -3,7 +3,9 @@
   border-radius: 5px;
   background-color: #3a3a3a;
 }
-
+.container {
+  min-height: 80vh;
+}
 /*PARALLAX EFFECT*/
 .parallax {
   background-image: url("../images/parallax.jpg");
@@ -17,12 +19,16 @@
   overflow: hidden;
   z-index: -1;
 }
+
+/*Teksti qe shfaqet me emrin e userit*/
 #user-div {
-  font-size: 24px; /* Adjust font size */
-  color: #fff5ee; /* Text color */
-  margin: 10px 20px; /* Padding */
-  text-align: center; /* Center text */
+  font-size: 24px;
+  color: #fff5ee;
+  margin: 10px 20px;
+  text-align: center;
 }
+
+/*stilizim i tabeles*/
 table,
 caption {
   background-color: lightgrey;
@@ -31,6 +37,7 @@ caption {
   border-spacing: 10px;
 }
 
+/*data e filmit*/
 #movieDate {
   border-bottom: 1px solid black;
   border-radius: 5px;
@@ -67,6 +74,7 @@ caption {
   color: black;
   font-style: normal;
 }
+
 /*Count Down*/
 #countdown {
   display: flex;

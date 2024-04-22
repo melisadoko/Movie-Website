@@ -1,112 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/shared.css">
-    <link rel="stylesheet" href="../styles/signUp.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/shared.css" />
+    <link rel="stylesheet" href="../styles/signUp.css" />
     <title>Krijoni Llogarine</title>
-</head>
-<body id="SU_body">
-  <!--header me navbar-->
-  <header class="SU_header">
-    <nav>
+  </head>
+  <body id="SU_body">
+    <!--header me navbar-->
+    <header class="SU_header">
+      <nav>
         <a href="../views/logIn.html" class="logIn"
           ><img
             src="../images/user.png"
             alt="profile"
             class="navbar_logo"
-        >Logohuni</a>
-    </nav>
-  </header>
-  <!--ketu kemi formen main me te gjitha fushat input dhe paragrafet e errorit perkates-->
-  <main id="SU_main">
-    <h2>Create your Account</h2>
-    <form action="/views/home.html" target="_self" method="get" name="createAccount" id="createAccount">
-      <div>
-        <label for="name">Emri</label>
-        <input class="text_inputs" type="text" id="name" name="name" placeholder="Enter your name" maxlength="20" required>
-        <p class=" error_msg" id="name_error">Plotesoni emrin.</p>
-      </div>
-      <div>
-        <label for="email">Email</label>
-        <input class="text_inputs" type="email" placeholder="Enter your mail" id="email" name="email" required>
-        <p class=" error_msg" id="email_error">Email eshte i pasakte.</p>
-      </div>
-      <div>
-        <label for="phone">Numri cel.</label>
-        <input class="text_inputs" type="tel" id="phone" name="phone" placeholder="06x xxx xxxx" pattern="06[7-9][0-9]{7}" maxlength="10" required>
-        <p class=" error_msg" id="phone_error">Numri i cel eshte i pasakte.</p>
-      </div>
-      <div>
-        <label for="password">Fjalekalimi</label>
-        <input class="text_inputs" type="password" placeholder="Password" id="password" name="password" required>
-        <p class=" error_msg" id="password_error">Password duhet te kete te pakten 8 karaktere ku te pakten nje shkronje kapitale, nje shkronje te vogel, nje numer dhe nje karakter special.</p>
-      </div>
-      <div>
-        <label for="confirmPwd">Konfirmo Fjalekalimin</label>
-        <input class="text_inputs" type="password" placeholder="Confirm password" id="confirmPwd" name="confirmPwd" required>
-        <p class=" error_msg" id="confirmPwd_error">Password-et nuk jane te njejta.</p>
-
-      </div>
-      <div>
-        <label for="birthDay">Ditelindja</label>
-        <input class="text_inputs" type="date" id="birthDay" name="birthDay" required>
-        <p class=" error_msg" id="birthDay_error">Duhet te jeni mbi 18 vjec.</p>
-      </div>
-      <div>
-        <label>Gjinia</label>
-        <div class="aligned_inputs">
-          <input type="radio" id="Male" name="Gender" value="Male"><label for="Male">Mashkull</label>
+          />Logohuni</a
+        >
+      </nav>
+    </header>
+    <!--ketu kemi formen main me te gjitha fushat input dhe paragrafet e errorit perkates-->
+    <main id="SU_main">
+      <h2>Create your Account</h2>
+      <form
+        action="/views/home.html"
+        target="_self"
+        method="get"
+        name="createAccount"
+        id="createAccount"
+      >
+        <div>
+          <label for="name">Emri</label>
+          <input
+            class="text_inputs"
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Enter your name"
+            maxlength="20"
+            required
+          />
+          <p class="error_msg" id="name_error">Plotesoni emrin.</p>
         </div>
-        <div class="aligned_inputs"> 
-          <input type="radio" id="Female" name="Gender" value="Female"><label for="Female">Femer</label>
+        <div>
+          <label for="email">Email</label>
+          <input
+            class="text_inputs"
+            type="email"
+            placeholder="Enter your mail"
+            id="email"
+            name="email"
+            required
+          />
+          <p class="error_msg" id="email_error">Email eshte i pasakte.</p>
         </div>
-        <p class=" error_msg" id="Gender_error">Zgjidhni gjinine.</p>
-      </div>
-      <div id="input-div">
-        <!--ketu eshte inputi per foton ku kur shtypet labeli per inputin
+        <div>
+          <label for="phone">Numri cel.</label>
+          <input
+            class="text_inputs"
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="06x xxx xxxx"
+            pattern="06[7-9][0-9]{7}"
+            maxlength="10"
+            required
+          />
+          <p class="error_msg" id="phone_error">Numri i cel eshte i pasakte.</p>
+        </div>
+        <div>
+          <label for="password">Fjalekalimi</label>
+          <input
+            class="text_inputs"
+            type="password"
+            placeholder="Password"
+            id="password"
+            name="password"
+            required
+          />
+          <p class="error_msg" id="password_error">
+            Password duhet te kete te pakten 8 karaktere ku te pakten nje
+            shkronje kapitale, nje shkronje te vogel, nje numer dhe nje karakter
+            special.
+          </p>
+        </div>
+        <div>
+          <label for="confirmPwd">Konfirmo Fjalekalimin</label>
+          <input
+            class="text_inputs"
+            type="password"
+            placeholder="Confirm password"
+            id="confirmPwd"
+            name="confirmPwd"
+            required
+          />
+          <p class="error_msg" id="confirmPwd_error">
+            Password-et nuk jane te njejta.
+          </p>
+        </div>
+        <div>
+          <label for="birthDay">Ditelindja</label>
+          <input
+            class="text_inputs"
+            type="date"
+            id="birthDay"
+            name="birthDay"
+            required
+          />
+          <p class="error_msg" id="birthDay_error">
+            Duhet te jeni mbi 18 vjec.
+          </p>
+        </div>
+        <div>
+          <label>Gjinia</label>
+          <div class="aligned_inputs">
+            <input type="radio" id="Male" name="Gender" value="Male" /><label
+              for="Male"
+              >Mashkull</label
+            >
+          </div>
+          <div class="aligned_inputs">
+            <input
+              type="radio"
+              id="Female"
+              name="Gender"
+              value="Female"
+            /><label for="Female">Femer</label>
+          </div>
+          <p class="error_msg" id="Gender_error">Zgjidhni gjinine.</p>
+        </div>
+        <div id="input-div">
+          <!--ketu eshte inputi per foton ku kur shtypet labeli per inputin
         i cili eshte stilizuar ne pamje si buton athere behet upload i fotos-->
-        <input type="file" id="upload-input" name="upload-input" onchange="UploadImg(event)">
-        <label for="upload-input">Ngarko foton</label>
-        <div id="default_profile_pic">
+          <input
+            type="file"
+            id="upload-input"
+            name="upload-input"
+            onchange="UploadImg(event)"
+          />
+          <label for="upload-input">Ngarko foton</label>
+          <div id="default_profile_pic"></div>
         </div>
-      </div>
-      <div>
-        <div  class="aligned_inputs">
-          <label for="AcceptTD"><input type="checkbox" id="AcceptTD" name="AcceptTD" required>Pranoj termat dhe kushtet.</label>
+        <div>
+          <div class="aligned_inputs">
+            <label for="AcceptTD"
+              ><input
+                type="checkbox"
+                id="AcceptTD"
+                name="AcceptTD"
+                required
+              />Pranoj termat dhe kushtet.</label
+            >
+          </div>
+          <p class="error_msg" id="AcceptTD_error">
+            Pranimi i termave dhe i kushteve eshte i detyruar.
+          </p>
         </div>
-        <p class=" error_msg" id="AcceptTD_error">Pranimi i termave dhe i kushteve eshte i detyruar.</p>
-      </div>
-      <div id="butoni">
-      <button id="create_account" type="submit">Krijo</button>
-      </div>
+        <div id="butoni">
+          <button id="create_account" type="submit">Krijo</button>
+        </div>
       </form>
-  </main>
-<!--footer-->
-  <footer class="footer">
-    <section class="footer-1">
-      <h2 id="about">Help & Policy</h2>
-      <ul>
-        <li><a href="#">Terms & Conditions</a></li>
-        <li><a href="./settings.html">Settings</a></li>
-        <li><a href="./contact.html">Contact Us</a></li>
-      </ul>
-    </section>
-    <section class="footer-2">
-      <h2 id="contact">FOLLOW US</h2>
-      <div class="social-icons">
-        <img src="../images/twitter-sign.png" alt="twitter" >
-        <img src="../images/instagram.png" alt="instagram" >
-        <img src="../images/facebook.png" alt="facebook" >
-        <img src="../images/youtube.png" alt="youtube" >
-      </div>
-    </section>
-    <section class="powered">
-      <h2>&copy; Modify| All rights reserved</h2>
-    </section>
-  </footer>
-  <script src="../scripts/signUp.js"></script>
-</body>
+    </main>
+    <!--footer-->
+    <footer class="footer">
+      <section class="footer-1">
+        <h2 id="about">Help & Policy</h2>
+        <ul>
+          <li><a href="./termsCond.html">Terms & Conditions</a></li>
+          <li><a href="./settings.html">Settings</a></li>
+          <li><a href="./contact.html">Contact Us</a></li>
+        </ul>
+      </section>
+      <section class="footer-2">
+        <h2 id="contact">FOLLOW US</h2>
+        <div class="social-icons">
+          <a href="https://twitter.com/"
+            ><img src="../images/twitter-sign.png" alt="twitter"
+          /></a>
+          <a href="https://www.instagram.com/"
+            ><img src="../images/instagram.png" alt="instagram"
+          /></a>
+          <a href="https://www.facebook.com"
+            ><img src="../images/facebook.png" alt="facebook"
+          /></a>
+          <a href="https://www.youtube.com/"
+            ><img src="../images/youtube.png" alt="youtube"
+          /></a>
+        </div>
+      </section>
+      <section class="powered">
+        <h2>&copy; Modify| All rights reserved</h2>
+      </section>
+    </footer>
+    <script src="../scripts/signUp.js"></script>
+  </body>
 </html>

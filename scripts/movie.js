@@ -59,9 +59,12 @@ function handleSendImage(event) {
 function sendMessage() {
   const commentText = document.getElementById("comment-input").value;
   const commentsList = document.getElementById("comments-list");
-  const newComment = document.createElement("li");
-  newComment.classList.add("comment");
-  newComment.textContent = commentText;
-  commentsList.appendChild(newComment);
-  document.getElementById("comment-input").value = "";
+  if (commentText.trim() != "") {
+    const newComment = document.createElement("li");
+    newComment.classList.add("comment");
+    let user = JSON.parse(localStorage.getItem("user"));
+    newComment.textContent = user.name + " : " + commentText;
+    commentsList.appendChild(newComment);
+    document.getElementById("comment-input").value = "";
+  }
 }
