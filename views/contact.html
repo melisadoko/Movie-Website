@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="stylesheet" type="text/css" href="../styles/shared.css" />
     <link rel="stylesheet" type="text/css" href="../styles/contact.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/css.gg/icons/icons.css"
@@ -8,56 +9,153 @@
     />
     <title>Kontaktet</title>
   </head>
-  <div class="container">
-    <h1 class="brand"><span>Na kontaktoni</span></h1>
-
-    <div class="wrapper">
-      <div class="company-info">
-        <h3>Movify</h3>
-
-        <ul>
-          <li>
-            <i class="gg-track"></i>&nbsp; Rruga e Elbasanit, Fakulteti Ekonomik
-          </li>
-          <li><i class="gg-phone"></i>&nbsp; +355 68 55 55 475</li>
-          <li><i class="gg-mail"></i>&nbsp; movify@hotmail.com</li>
-        </ul>
+  <header>
+    <nav>
+      <div class="logo">
+        <img src="../images/logo.png" alt="logo" />
       </div>
+      <ul>
+        <li>
+          <a href="home.html"
+            ><img
+              src="../images/movie_logo.png"
+              alt="movies"
+              class="navbar_logo"
+            />Filma</a
+          >
+        </li>
+        <li>
+          <a href="series.html"
+            ><img
+              src="../images/series_logo.png"
+              alt="series"
+              class="navbar_logo"
+            />Seriale</a
+          >
+        </li>
+        <li>
+          <a href="favourite.html"
+            ><img
+              src="../images/white_heart.png"
+              alt="favourites"
+              class="navbar_logo"
+            />Favoritët</a
+          >
+        </li>
+      </ul>
 
-      <div class="contact">
-        <h3>Na shkruani</h3>
+      <div class="hamburger">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </nav>
+    <aside class="menubar">
+      <ul>
+        <li>
+          <a href="home.html" class="selected"
+            ><img
+              src="../images/movie_logo.png"
+              alt="movies"
+              class="navbar_logo"
+            />Filma</a
+          >
+        </li>
+        <li>
+          <a href="series.html"
+            ><img
+              src="../images/series_logo.png"
+              alt="series"
+              class="navbar_logo"
+            />Seriale</a
+          >
+        </li>
+        <li>
+          <a href="favourite.html"
+            ><img
+              src="../images/white_heart.png"
+              alt="favourites"
+              class="navbar_logo"
+            />Favoritët</a
+          >
+        </li>
+      </ul>
+    </aside>
+  </header>
+  <body>
+    <div class="container">
+      <h1 class="brand"><span>Na kontaktoni</span></h1>
+      <div class="wrapper">
+        <div class="company-info">
+          <h3>Movify</h3>
+          <ul>
+            <li>
+              <i class="gg-track"></i>&nbsp; Rruga e Elbasanit, Fakulteti
+              Ekonomik
+            </li>
+            <li><i class="gg-phone"></i>&nbsp; +355 68 55 55 475</li>
+            <li><i class="gg-mail"></i>&nbsp; movify@hotmail.com</li>
+          </ul>
+        </div>
 
-        <form id="contact-form">
-          <p>
-            <label>Emri</label>
-            <input type="text" name="name" id="name" required />
-          </p>
+        <div class="contact">
+          <h3>Na shkruani</h3>
 
-          <p>
-            <label>Mbiemri</label>
-            <input type="text" name="name" id="name" required />
-          </p>
+          <form id="contact-form">
+            <p>
+              <label>Emri</label>
+              <input type="text" name="name" id="name" required />
+            </p>
 
-          <p>
-            <label>E-mail juaj</label>
-            <input type="email" name="email" id="email" required />
-          </p>
+            <p>
+              <label>Mbiemri</label>
+              <input type="text" name="name" id="name" required />
+            </p>
 
-          <p>
-            <label>Numri telefonit</label>
-            <input type="text" name="phone" id="phone" />
-          </p>
+            <p>
+              <label>E-mail juaj</label>
+              <input type="email" name="email" id="email" required />
+            </p>
 
-          <p class="full">
-            <label>Mesazhi</label>
-            <textarea name="message" rows="5" id="message"></textarea>
-          </p>
+            <p>
+              <label>Numri telefonit</label>
+              <input type="text" name="phone" id="phone" />
+            </p>
 
-          <p class="full">
-            <button type="submit">Dërgo</button>
-          </p>
-        </form>
+            <p class="full">
+              <label>Mesazhi</label>
+              <textarea name="message" rows="5" id="message"></textarea>
+            </p>
+
+            <p class="full">
+              <button type="submit">Dërgo</button>
+            </p>
+          </form>
+        </div>
       </div>
     </div>
-  </div>
+
+    <footer class="footer">
+      <section class="footer-1">
+        <h2 id="about">Help & Policy</h2>
+        <ul>
+          <li><a href="./termsCond.html">Terms & Conditions</a></li>
+          <li><a href="#">Settings</a></li>
+          <li><a href="#" class="selected">Kontaktet</a></li>
+        </ul>
+      </section>
+      <section class="footer-2">
+        <h2 id="contact">FOLLOW US</h2>
+        <div class="social-icons">
+          <img src="../images/twitter-sign.png" alt="twitter" />
+          <img src="../images/instagram.png" alt="instagram" />
+          <img src="../images/facebook.png" alt="facebook" />
+          <img src="../images/youtube.png" alt="youtube" />
+        </div>
+      </section>
+      <section class="powered">
+        <h2>&copy; Modify| All rights reserved</h2>
+      </section>
+    </footer>
+  </body>
 </html>

@@ -4,6 +4,11 @@
   font-family: Arial, Helvetica, sans-serif;
   box-sizing: border-box;
 }
+.selected {
+  border-bottom-style: none;
+  border-radius: 5px;
+  background-color: #3a3a3a;
+}
 .container {
   min-height: 80vh;
 }
