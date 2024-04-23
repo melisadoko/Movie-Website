@@ -1,19 +1,20 @@
+//Eventi thirret pasi ngarkohet dokumenti HTML
 document.addEventListener("DOMContentLoaded", function () {
-  // Retrieve favourites movies from localStorage
+  // Marrim lista e filmove të preferuar nga localStorage
   const favouriteMovies = JSON.parse(localStorage.getItem("favourites")) || [];
 
-  // Check if there is any favourite movie in Local Storage
+  // Kontrollojme nese ka filma te preferuar
   if (favouriteMovies.length !== 0) {
     // Get reference to the section
     const section = document.querySelector(".movie_section");
 
-    // Loop through each movie in the list
+    // iterojme per cdo film te preferuar
     favouriteMovies.forEach(function (movieData) {
-      // Create article element
+      // Krijojme element article
       const article = document.createElement("article");
       article.classList.add("movie");
 
-      // Populate article content
+      // Mbushim permbajtjen me filmat e preferuar
       article.innerHTML = `
             <h5>${movieData.type}</h5>
             <a href="movie.html" onclick="saveMovieNameLocalStorage(this)">
@@ -24,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
             </a>
           `;
 
-      // Append article to the section
+      // Append elementin article te krijuar
       section.appendChild(article);
     });
   }

@@ -1,7 +1,7 @@
 const mobileNav = document.querySelector(".hamburger");
 const navbar = document.querySelector(".menubar");
 const toggleNav = () => {
-  navbar.classList.toggle("active");
+  navbar.classList.toggle("active"); //shton ose heq klasen active
   mobileNav.classList.toggle("hamburger-active");
 };
 mobileNav.addEventListener("click", () => toggleNav());
@@ -24,6 +24,7 @@ function searchMovies() {
         .innerText.trim()
         .toUpperCase();
       if (movieCaption.includes(movieTitle.trim())) {
+        //nese permban vlerat e shkruara shfaqe
         ShowFlexElement(moviePosters[i]);
       } else {
         HideFlexElement(moviePosters[i]);
@@ -47,6 +48,7 @@ function HideFlexElement(element) {
 function saveMovieNameLocalStorage(element) {
   let iframePath;
   let description;
+  //per cdo film, ruajme ne ls informacionin lidhur me description dhe trailer
   switch (element.querySelector("img").alt) {
     case "Kung Fu Panda 4 (2024)":
       iframePath =
@@ -150,6 +152,8 @@ function saveMovieNameLocalStorage(element) {
       description =
         "Ish-ushtari Shamanov mbërrin në një qytet të vogël për të takuar mikun e tij të vjetër, por rastësisht zbulon se vendasit aty jetojnë me frikë për jetën. Ai nuk mund të qëndrojë pa vepruar dhe sulmon autoritetet e mbrapshta të qytetit.";
   }
+
+  //krijohet objekti
   var movieTitleObj = {
     title: element.querySelector("img").alt,
     src: iframePath,
@@ -157,5 +161,6 @@ function saveMovieNameLocalStorage(element) {
     desc: description,
     type: element.previousElementSibling.innerText,
   };
+  //ruhet ne ls
   localStorage.setItem("movieTitle", JSON.stringify(movieTitleObj));
 }
