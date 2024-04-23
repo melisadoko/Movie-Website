@@ -181,7 +181,7 @@ input {
   width: 40px;
 }
 
-@media only screen and (min-width: 375px) and (max-width: 768px) {
+@media only screen and (min-width: 415px) and (max-width: 768px) {
   body {
     margin: 0;
   }
@@ -246,7 +246,7 @@ input {
   }
 }
 
-@media only screen and (min-width: 320px) and (max-width: 375px) {
+@media only screen and (min-width: 320px) and (max-width: 415px) {
   body {
     margin: 0;
   }
