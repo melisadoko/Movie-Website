@@ -145,13 +145,8 @@ document
       valid_Email &&
       valid_Phone &&
       valid_Message;
-
-    if (check === false) {
-      alert("Ju lutem plotesoni fushat sakte.");
-    }
-
     if (check) {
       localStorage.setItem("email", JSON.stringify(getEmail()));
-      document.getElementById("sendEmail").submit();
+      document.getElementById("contact-form").submit();
     }
   });
