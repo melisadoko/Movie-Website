@@ -1,22 +1,39 @@
+var dropArea = document.getElementById("default_profile_pic");
+dropArea.addEventListener("dragover", function (event) {
+  event.preventDefault();
+});
+dropArea.addEventListener("drop", UploadImg);
 // ky funksion ben ngarkimin e fotos se profilit dhe ruajtjes se blobit ne localStorage
-function UploadImg(event){
-    var imageExtensions = ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'svg', 'webp'];
-    var filename=event.target.files[0].name
-    var ext=filename.substring(filename.lastIndexOf('.')+1);
-    ext=ext.toLowerCase();
-    
-    if(imageExtensions.includes(ext)){    
-    var div=document.getElementById("default_profile_pic");
-    var url=URL.createObjectURL(event.target.files[0]);
-    div.style.backgroundImage="url("+url+")";
-    div.style.backgroundSize="cover";
-    localStorage.setItem("profile_pic", url)
+function UploadImg(event) {
+  var imageExtensions = ["jpg", "jpeg", "png", "gif", "bmp", "svg", "webp"];
+  var file;
+
+  if (event.type === "change") {
+    file = event.target.files[0];
+  } else if (event.type === "drop") {
+    event.preventDefault();
+    file = event.dataTransfer.files[0];
+  }
+
+  if (file) {
+    var filename = file.name;
+    var ext = filename.substring(filename.lastIndexOf(".") + 1).toLowerCase();
+
+    if (imageExtensions.includes(ext)) {
+      var div = document.getElementById("default_profile_pic");
+      var url = URL.createObjectURL(file);
+      div.style.backgroundImage = "url(" + url + ")";
+      div.style.backgroundSize = "cover";
+      localStorage.setItem("profile_pic", url);
+    }
   }
 }
 
 //ky funksion behet trigger ne momentin qe shtypet butoni krijo
 //behet kontrolli percdo fushe dhe me pas behet redirect te home page
-document.getElementById('create_account').addEventListener('click', function(event) {
+document
+  .getElementById("create_account")
+  .addEventListener("click", function (event) {
     event.preventDefault();
 
     var v_acceptTD = ValidateTerms();
@@ -43,7 +60,7 @@ document.getElementById('create_account').addEventListener('click', function(eve
     }
   });
 
-  //ketu behet krijimi i objektit te js per tu ruajtur ne localStorage
+//ketu behet krijimi i objektit te js per tu ruajtur ne localStorage
 function getUserData() {
   return {
     name: document.getElementById("name").value,
