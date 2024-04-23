@@ -102,33 +102,73 @@
           <h3>Na shkruani</h3>
 
           <form id="contact-form">
-            <p>
+            <div>
               <label>Emri</label>
-              <input type="text" name="name" id="name" required />
-            </p>
+              <input
+                type="text"
+                name="firstname"
+                id="firstname"
+                class="text_inputs"
+                required
+              />
+              <p class="error_msg" id="firstname_error">Plotesoni emrin.</p>
+            </div>
 
-            <p>
+            <div>
               <label>Mbiemri</label>
-              <input type="text" name="name" id="name" required />
-            </p>
+              <input
+                type="text"
+                name="lastname"
+                id="lastname"
+                class="text_inputs"
+                required
+              />
+              <p class="error_msg" id="lastname_error">Plotesoni mbiemrin.</p>
+            </div>
 
-            <p>
+            <div>
               <label>E-mail juaj</label>
-              <input type="email" name="email" id="email" required />
-            </p>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                class="text_inputs"
+                required
+              />
+              <p class="error_msg" id="email_error">Email eshte i pasakte.</p>
+            </div>
 
-            <p>
+            <div>
               <label>Numri telefonit</label>
-              <input type="text" name="phone" id="phone" />
-            </p>
+              <input
+                type="text"
+                name="phone"
+                id="phone"
+                placeholder="06x xxx xxxx"
+                pattern="06[7-9][0-9]{7}"
+                maxlength="10"
+                class="text_inputs"
+              />
+              <p class="error_msg" id="phone_error">
+                Numri i cel eshte i pasakte.
+              </p>
+            </div>
 
-            <p class="full">
+            <div class="full">
               <label>Mesazhi</label>
-              <textarea name="message" rows="5" id="message"></textarea>
-            </p>
+              <textarea
+                name="message"
+                rows="5"
+                id="message"
+                class="text_inputs"
+              ></textarea>
+              <p class="error_msg" id="message_error">
+                Mesazhi duhet te jete me shume se 20 karaktere.
+              </p>
+            </div>
 
             <p class="full">
-              <button type="submit">Dërgo</button>
+              <button type="submit" id="sendEmail">Dërgo</button>
             </p>
           </form>
         </div>
@@ -167,5 +207,7 @@
         <h2>&copy; Modify| All rights reserved</h2>
       </section>
     </footer>
+
+    <script src="../scripts/contact.js"></script>
   </body>
 </html>

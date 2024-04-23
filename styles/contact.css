@@ -138,3 +138,9 @@ li {
     text-align: left;
   }
 }
+
+.error_msg {
+  color: red;
+  font-size: 12px;
+  display: none;
+}
