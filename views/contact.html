@@ -1,63 +1,217 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kontaktet</title>
+    <link rel="stylesheet" type="text/css" href="../styles/shared.css" />
     <link rel="stylesheet" type="text/css" href="../styles/contact.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/css.gg/icons/icons.css"
       rel="stylesheet"
     />
-    <title>Kontaktet</title>
   </head>
-  <div class="container">
-    <h1 class="brand"><span>Na kontaktoni</span></h1>
 
-    <div class="wrapper">
-      <div class="company-info">
-        <h3>Movify</h3>
-
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <img src="../images/logo.png" alt="logo" />
+        </div>
         <ul>
           <li>
-            <i class="gg-track"></i>&nbsp; Rruga e Elbasanit, Fakulteti Ekonomik
+            <a href="home.html"
+              ><img
+                src="../images/movie_logo.png"
+                alt="movies"
+                class="navbar_logo"
+              />Filma</a
+            >
           </li>
-          <li><i class="gg-phone"></i>&nbsp; +355 68 55 55 475</li>
-          <li><i class="gg-mail"></i>&nbsp; movify@hotmail.com</li>
+          <li>
+            <a href="series.html"
+              ><img
+                src="../images/series_logo.png"
+                alt="series"
+                class="navbar_logo"
+              />Seriale</a
+            >
+          </li>
+          <li>
+            <a href="favourite.html"
+              ><img
+                src="../images/white_heart.png"
+                alt="favourites"
+                class="navbar_logo"
+              />Favoritët</a
+            >
+          </li>
         </ul>
-      </div>
 
-      <div class="contact">
-        <h3>Na shkruani</h3>
+        <div class="hamburger">
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </div>
+      </nav>
+      <aside class="menubar">
+        <ul>
+          <li>
+            <a href="home.html" class="selected"
+              ><img
+                src="../images/movie_logo.png"
+                alt="movies"
+                class="navbar_logo"
+              />Filma</a
+            >
+          </li>
+          <li>
+            <a href="series.html"
+              ><img
+                src="../images/series_logo.png"
+                alt="series"
+                class="navbar_logo"
+              />Seriale</a
+            >
+          </li>
+          <li>
+            <a href="favourite.html"
+              ><img
+                src="../images/white_heart.png"
+                alt="favourites"
+                class="navbar_logo"
+              />Favoritët</a
+            >
+          </li>
+        </ul>
+      </aside>
+    </header>
+    <div class="container">
+      <h1 class="brand"><span>Na kontaktoni</span></h1>
+      <div class="wrapper">
+        <div class="company-info">
+          <h3>Movify</h3>
+          <ul>
+            <li>
+              <i class="gg-track"></i>&nbsp; Rruga e Elbasanit, Fakulteti
+              Ekonomik
+            </li>
+            <li><i class="gg-phone"></i>&nbsp; +355 68 55 55 475</li>
+            <li><i class="gg-mail"></i>&nbsp; movify@hotmail.com</li>
+          </ul>
+        </div>
 
-        <form id="contact-form">
-          <p>
-            <label>Emri</label>
-            <input type="text" name="name" id="name" required />
-          </p>
+        <div class="contact">
+          <h3>Na shkruani</h3>
 
-          <p>
-            <label>Mbiemri</label>
-            <input type="text" name="name" id="name" required />
-          </p>
+          <form id="contact-form">
+            <div>
+              <label>Emri</label>
+              <input
+                type="text"
+                name="firstname"
+                id="firstname"
+                class="text_inputs"
+                required
+              />
+              <p class="error_msg" id="firstname_error">Plotesoni emrin.</p>
+            </div>
 
-          <p>
-            <label>E-mail juaj</label>
-            <input type="email" name="email" id="email" required />
-          </p>
+            <div>
+              <label>Mbiemri</label>
+              <input
+                type="text"
+                name="lastname"
+                id="lastname"
+                class="text_inputs"
+                required
+              />
+              <p class="error_msg" id="lastname_error">Plotesoni mbiemrin.</p>
+            </div>
 
-          <p>
-            <label>Numri telefonit</label>
-            <input type="text" name="phone" id="phone" />
-          </p>
+            <div>
+              <label>E-mail juaj</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                class="text_inputs"
+                required
+              />
+              <p class="error_msg" id="email_error">Email eshte i pasakte.</p>
+            </div>
 
-          <p class="full">
-            <label>Mesazhi</label>
-            <textarea name="message" rows="5" id="message"></textarea>
-          </p>
+            <div>
+              <label>Numri telefonit</label>
+              <input
+                type="text"
+                name="phone"
+                id="phone"
+                placeholder="06x xxx xxxx"
+                pattern="06[7-9][0-9]{7}"
+                maxlength="10"
+                class="text_inputs"
+              />
+              <p class="error_msg" id="phone_error">
+                Numri i cel eshte i pasakte.
+              </p>
+            </div>
 
-          <p class="full">
-            <button type="submit">Dërgo</button>
-          </p>
-        </form>
+            <div class="full">
+              <label>Mesazhi</label>
+              <textarea
+                name="message"
+                rows="5"
+                id="message"
+                class="text_inputs"
+              ></textarea>
+              <p class="error_msg" id="message_error">
+                Mesazhi duhet te jete me shume se 20 karaktere.
+              </p>
+            </div>
+
+            <p class="full">
+              <button type="submit" id="sendEmail">Dërgo</button>
+            </p>
+          </form>
+        </div>
       </div>
     </div>
-  </div>
+    <footer class="footer">
+      <section class="footer-1">
+        <h2 id="about">Help & Policy</h2>
+        <ul>
+          <li><a href="./termsCond.html">Terms & Conditions</a></li>
+          <li><a href="./settings.html">Settings</a></li>
+          <li>
+            <a href="./contact.html" class="selected-footer">Kontaktet</a>
+          </li>
+        </ul>
+      </section>
+      <section class="footer-2">
+        <h2 id="contact">FOLLOW US</h2>
+        <div class="social-icons">
+          <a href="https://twitter.com/"
+            ><img src="../images/twitter-sign.png" alt="twitter"
+          /></a>
+          <a href="https://www.instagram.com/"
+            ><img src="../images/instagram.png" alt="instagram"
+          /></a>
+          <a href="https://www.facebook.com"
+            ><img src="../images/facebook.png" alt="facebook"
+          /></a>
+          <a href="https://www.youtube.com/"
+            ><img src="../images/youtube.png" alt="youtube"
+          /></a>
+        </div>
+      </section>
+      <section class="powered">
+        <h2>&copy; Modify| All rights reserved</h2>
+      </section>
+    </footer>
+
+    <script src="../scripts/contact.js"></script>
+    <script src="../scripts/script.js"></script>
+  </body>
 </html>

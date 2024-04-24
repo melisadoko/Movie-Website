@@ -1,7 +1,8 @@
 .container {
-  display: flex;
+  display: flex; /*Flex sepse seksionet do ndahen ne dy pjese, njeri ne te majte, tjetri djathtas*/
   justify-content: center;
   background-color: #f2f2f2;
+  min-height: 80vh;
 }
 
 .container h2 {
@@ -13,12 +14,7 @@
   border: none;
   border-radius: 2px;
 }
-
-/*.container iframe:nth-child(3) {
-  width: 100%;
-  border: none;
-  border-radius: 2px;
-}*/
+/*stilizim i seksionit ne te majte*/
 #side {
   flex: 1;
   margin-top: 0px;
@@ -26,6 +22,7 @@
   border-right: 1px solid rgb(58, 58, 58);
 }
 
+/*Pjesa ku do te shfaqet traileri i filmit*/
 #movie_section {
   margin-top: 5%;
   margin-left: 1.5%;
@@ -36,27 +33,27 @@
 
 .below-trailer,
 .like-comment {
-  display: flex; /* Use flexbox to align items horizontally */
-  align-items: center; /* Align items vertically */
+  display: flex; /* flex per ti shfaqur elementet horizontalisht*/
+  align-items: center;
   float: right;
   flex-wrap: wrap;
 }
 
 .below-trailer #description {
-  flex: 1; /* Allow description to take up remaining space */
-  margin-right: 10px; /* Add some space between description and input */
+  flex: 1;
+  margin-right: 10px;
 }
-
+/*inputi i komentit*/
 .like-comment input {
-  flex: 1; /* Allow input to grow and fill available space */
+  flex: 1;
   height: 40px;
-  max-width: calc(100% - 90px); /* Limit input width to leave space for icons */
+  max-width: calc(100% - 90px);
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 0.5em;
   margin-right: 10px;
 }
-
+/*imazhi i like ose dislike*/
 .like-comment img {
   width: 25px;
   height: auto;
@@ -73,19 +70,19 @@
 }
 
 .comments #comments-list {
-  max-height: 100px; /* Limit the height of the comments list */
-  overflow-y: scroll; /* Enable vertical scroll if the content exceeds the height */
+  max-height: 100px; /* Per ta bere pjesen e komentit scrollable */
+  overflow-y: scroll; /* Lejon te besh scroll vertikalisht*/
   list-style-type: none;
 }
 .comments #comments-list::-webkit-scrollbar {
-  width: 10px; /* Set the width of the scrollbar */
+  width: 10px;
 }
 
 .comments #comments-list::-webkit-scrollbar-thumb {
-  background-color: #888; /* Color of the thumb */
-  border-radius: 5px; /* Border radius of the thumb */
+  background-color: #888;
+  border-radius: 5px;
 }
-/* Style for individual comment */
+/* Komenti individual */
 .comment {
   margin-bottom: 10px;
   border: 1px solid #ccc;
@@ -96,7 +93,7 @@
 .comment li {
   margin: 0;
 }
-
+/*Responsiviteti*/
 @media screen and (max-width: 768px) {
   #side {
     display: none;
@@ -106,11 +103,11 @@
     flex-direction: column;
   }
   .like-comment input {
-    width: 20rem; /* Allow input to take full width on smaller screens */
-    margin-right: 0; /* Remove margin on smaller screens */
+    width: 20rem;
+    margin-right: 0;
   }
 
   .like-comment img {
-    margin-right: 0.5em; /* Add some space between icons on smaller screens */
+    margin-right: 0.5em; /* Hapesire mes ikonave */
   }
 }
