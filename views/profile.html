@@ -113,7 +113,7 @@
             <div>
               <!--butonat dhe tagu input per ngarkimin dhe fshirjen e fotos se profilit-->
               <input type="file" id="upload-input" name="upload-input" onchange="UploadImg(event)" hidden>
-              <button id="change" class="photo_button" onclick="document.getElementById('upload-input').click();">Ndrysho 
+              <button id="change" class="photo_button" onclick="document.getElementById('upload-input').click();" tabindex="1">Ndrysho 
                 <span class="btn_icon">
                   <!--ikone e bootstrap-->
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-upload" viewBox="0 0 16 16">
@@ -122,7 +122,7 @@
                   </svg>
                 </span>
               </button>
-              <button id="remove" class="photo_button" onclick="removePhoto()">Fshije
+              <button id="remove" class="photo_button" onclick="removePhoto()" tabindex="2">Fshije
                 <span class="btn_icon">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
                     <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
@@ -169,30 +169,30 @@
               <!--forma e ndyrshimit te te dhenave si password dhe numri i telefonit bashke me mesazhet e errorit-->
             <div id="passwords">
               <h4>Nderro Fjalekalimin</h4>
-              <input type="password" id="existing_pswd" name="existing_pswd" class="text_inputs" placeholder="Fjalekalimi Egzistues"> 
+              <input type="password" id="existing_pswd" name="existing_pswd" class="text_inputs" placeholder="Fjalekalimi Egzistues" tabindex="3"> 
               <p class=" error_msg" id="existing_pswd_error">Fjalekalimi egzistues eshte i gabuar</p>
-              <input type="password" id="new_pswd" name="new_pswd" placeholder="Fjalekalimi i Ri" class="text_inputs">
+              <input type="password" id="new_pswd" name="new_pswd" placeholder="Fjalekalimi i Ri" class="text_inputs" tabindex="4">
               <p class=" error_msg" id="password_error">Password duhet te kete te pakten 8 karaktere ku te pakten nje shkronje kapitale, nje shkronje te vogel, nje numer dhe nje karakter special.</p>
-              <input type="password" id="confirm_new_pswd" name="confirm_new_pswd" placeholder="Konfirmo Fjalekalimin" class="text_inputs">
+              <input type="password" id="confirm_new_pswd" name="confirm_new_pswd" placeholder="Konfirmo Fjalekalimin" class="text_inputs" tabindex="5">
               <p class=" error_msg" id="confirmPwd_error">Password-et nuk jane te njejta.</p>
             </div>
             <div>
               <h4>Nderro Numrin e Telefonit</h4>
-              <input class="text_inputs" type="tel" id="phone" name="phone" placeholder="06x xxx xxxx" pattern="06[7-9][0-9]{7}" maxlength="10" required>
+              <input class="text_inputs" type="tel" id="phone" name="phone" placeholder="06x xxx xxxx" pattern="06[7-9][0-9]{7}" maxlength="10" tabindex="6">
               <p class=" error_msg" id="phone_error">Numri i cel eshte i pasakte.</p>
             </div>
           </form>
           <!--butoni per ruajtjen e te dhenave-->
-          <button type="button" id="save_changes">Ruaj Ndryshimet</button>
+          <button type="button" id="save_changes" tabindex="7">Ruaj Ndryshimet</button>
         </section>
         <section id="charts">
           <!--seksioni i charteve ku kemi chartet e zhanerave dhe oreve te shpenzuara-->
           <h1 id="stats">STATISTIKAT E TUA</h1>
           <div id="chart1">
-            <canvas id="genre_chart" class="chart"></canvas>
+            <canvas id="genre_chart" class="chart" tabindex="8"></canvas>
           </div>
           <div>
-            <canvas id="time_spent_chart" class="chart"></canvas>
+            <canvas id="time_spent_chart" class="chart" tabindex="9"></canvas>
           </div>
         </section>
       </main>
