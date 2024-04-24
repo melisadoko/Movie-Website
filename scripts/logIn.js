@@ -9,7 +9,7 @@ signUpButton.addEventListener("click", function () {
 
 signInButton.addEventListener("click", function (event) {
   event.preventDefault();
-  var user=JSON.parse(localStorage.getItem('user'))
+  var user = JSON.parse(localStorage.getItem("user"));
   var emailInput = email.value;
   var passwordInput = password.value;
 
@@ -21,8 +21,6 @@ signInButton.addEventListener("click", function (event) {
 
   // nese email dhe password jane keto qe kemi deklaruar
   if (emailInput === user.email && passwordInput === user.password) {
-    localStorage.setItem("email", emailInput);
-    localStorage.setItem("password", passwordInput);
     window.location.href = "../views/home.html";
   } else {
     // nese nuk jane te sakta
