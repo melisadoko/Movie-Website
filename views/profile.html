@@ -11,215 +11,346 @@
   <body id="P_body">
     <!--header ku kemi navbarin-->
     <header>
-        <nav>
-          <div class="logo">
-            <img src="../images/logo.png" alt="logo" />
-          </div>
-          <ul>
-            <li>
-              <a href="home.html" class="selected"
-                ><img
-                  src="../images/movie_logo.png"
-                  alt="movies"
-                  class="navbar_logo"
-                />Filma</a
-              >
-            </li>
-            <li>
-              <a href="series.html"
-                ><img
-                  src="../images/series_logo.png"
-                  alt="series"
-                  class="navbar_logo"
-                />Seriale</a
-              >
-            </li>
-            <li>
-              <a href="favourite.html"
-                ><img
-                  src="../images/white_heart.png"
-                  alt="favourites"
-                  class="navbar_logo"
-                />Favoritët</a
-              >
-            </li>
-          </ul>
-          <div class="search_profile">
-            <input
-              type="search"
-              id="search_input"
-              onkeypress="handleSearchKeyPress(event)"
-              placeholder="Search"
-            />
-            <img
-              src="../images/search.png"
-              alt="search"
-              id="search_icon"
-              class="search_profile_logo"
-              onclick="searchMovies()"
-            />
-            <a href="./profile.html"
+      <nav>
+        <div class="logo">
+          <img src="../images/logo.png" alt="logo" />
+        </div>
+        <ul>
+          <li>
+            <a href="home.html" class="selected"
               ><img
-                src="../images/user.png"
-                alt="profile"
-                class="search_profile_logo"
-            /></a>
-          </div>
-          <div class="hamburger">
-            <span class="line"></span>
-            <span class="line"></span>
-            <span class="line"></span>
-          </div>
-        </nav>
-        <aside class="menubar">
-          <ul>
-            <li>
-              <a href="home.html" class="selected"
-                ><img
-                  src="../images/movie_logo.png"
-                  alt="movies"
-                  class="navbar_logo"
-                />Filma</a
+                src="../images/movie_logo.png"
+                alt="movies"
+                class="navbar_logo"
+              />Filma</a
+            >
+          </li>
+          <li>
+            <a href="series.html"
+              ><img
+                src="../images/series_logo.png"
+                alt="series"
+                class="navbar_logo"
+              />Seriale</a
+            >
+          </li>
+          <li>
+            <a href="favourite.html"
+              ><img
+                src="../images/white_heart.png"
+                alt="favourites"
+                class="navbar_logo"
+              />Favoritët</a
+            >
+          </li>
+        </ul>
+        <div class="search_profile">
+          <input
+            type="search"
+            id="search_input"
+            onkeypress="handleSearchKeyPress(event)"
+            placeholder="Search"
+          />
+          <img
+            src="../images/search.png"
+            alt="search"
+            id="search_icon"
+            class="search_profile_logo"
+            onclick="searchMovies()"
+          />
+          <a href="./profile.html"
+            ><img
+              src="../images/user.png"
+              alt="profile"
+              class="search_profile_logo"
+          /></a>
+        </div>
+        <div class="hamburger">
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </div>
+      </nav>
+      <aside class="menubar">
+        <ul>
+          <li>
+            <a href="home.html" class="selected"
+              ><img
+                src="../images/movie_logo.png"
+                alt="movies"
+                class="navbar_logo"
+              />Filma</a
+            >
+          </li>
+          <li>
+            <a href="series.html"
+              ><img
+                src="../images/series_logo.png"
+                alt="series"
+                class="navbar_logo"
+              />Seriale</a
+            >
+          </li>
+          <li>
+            <a href="favourite.html"
+              ><img
+                src="../images/white_heart.png"
+                alt="favourites"
+                class="navbar_logo"
+              />Favoritët</a
+            >
+          </li>
+        </ul>
+      </aside>
+    </header>
+    <!--zona main e bodyt qe kemi informacionin kryesore-->
+    <main id="P_main">
+      <!--seksioni 1 ku kemi informacione te pergjithshme per perdoruesin-->
+      <section id="s1">
+        <!--div ku vendoset fotoja-->
+        <div id="default_profile_pic"></div>
+        <div>
+          <!--butonat dhe tagu input per ngarkimin dhe fshirjen e fotos se profilit-->
+          <input
+            type="file"
+            id="upload-input"
+            name="upload-input"
+            onchange="UploadImg(event)"
+            hidden
+          />
+          <button
+            id="change"
+            class="photo_button"
+            onclick="document.getElementById('upload-input').click();"
+            tabindex="1"
+          >
+            Ndrysho
+            <span class="btn_icon">
+              <!--ikone e bootstrap-->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-upload"
+                viewBox="0 0 16 16"
               >
-            </li>
-            <li>
-              <a href="series.html"
-                ><img
-                  src="../images/series_logo.png"
-                  alt="series"
-                  class="navbar_logo"
-                />Seriale</a
+                <path
+                  d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"
+                />
+                <path
+                  d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708z"
+                />
+              </svg>
+            </span>
+          </button>
+          <button
+            id="remove"
+            class="photo_button"
+            onclick="removePhoto()"
+            tabindex="2"
+          >
+            Fshije
+            <span class="btn_icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-trash"
+                viewBox="0 0 16 16"
               >
-            </li>
-            <li>
-              <a href="favourite.html"
-                ><img
-                  src="../images/white_heart.png"
-                  alt="favourites"
-                  class="navbar_logo"
-                />Favoritët</a
-              >
-            </li>
-          </ul>
-        </aside>
-      </header>
-      <!--zona main e bodyt qe kemi informacionin kryesore-->
-      <main id="P_main">
-        <!--seksioni 1 ku kemi informacione te pergjithshme per perdoruesin-->
-        <section id="s1">
-          <!--div ku vendoset fotoja-->
-            <div id="default_profile_pic">
-            </div>
-            <div>
-              <!--butonat dhe tagu input per ngarkimin dhe fshirjen e fotos se profilit-->
-              <input type="file" id="upload-input" name="upload-input" onchange="UploadImg(event)" hidden>
-              <button id="change" class="photo_button" onclick="document.getElementById('upload-input').click();" tabindex="1">Ndrysho 
-                <span class="btn_icon">
-                  <!--ikone e bootstrap-->
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-upload" viewBox="0 0 16 16">
-                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
-                    <path d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708z"/>
-                  </svg>
-                </span>
-              </button>
-              <button id="remove" class="photo_button" onclick="removePhoto()" tabindex="2">Fshije
-                <span class="btn_icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
-                    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
-                    <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
-                  </svg>
-                </span>
-              </button>
-            </div>
-            <div id="name_gender_container">
-              <!--container me te dhenat e perdoruesit qe mbushen ne javascript-->
-              <h1 id="name">
-            </h1>
-            <svg id="female"  class="gender" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-gender-female" viewBox="0 0 16 16">
-              <path fill-rule="evenodd" d="M8 1a4 4 0 1 0 0 8 4 4 0 0 0 0-8M3 5a5 5 0 1 1 5.5 4.975V12h2a.5.5 0 0 1 0 1h-2v2.5a.5.5 0 0 1-1 0V13h-2a.5.5 0 0 1 0-1h2V9.975A5 5 0 0 1 3 5"/>
-            </svg>
-          
-            <svg id="male" class="gender"  xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-gender-male" viewBox="0 0 16 16">
-              <path fill-rule="evenodd" d="M9.5 2a.5.5 0 0 1 0-1h5a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0V2.707L9.871 6.836a5 5 0 1 1-.707-.707L13.293 2zM6 6a4 4 0 1 0 0 8 4 4 0 0 0 0-8"/>
-            </svg>
-            </div>
-            <div>
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
-                <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
+                <path
+                  d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"
+                />
+                <path
+                  d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"
+                />
               </svg>
-              <span id="email"></span>
-            </div>
-            <div>
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
-                <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/>
-              </svg>
-              <span id="phone_number"></span>
-            </div>
-            <div>
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cake2" viewBox="0 0 16 16">
-                <path d="m3.494.013-.595.79A.747.747 0 0 0 3 1.814v2.683q-.224.051-.432.107c-.702.187-1.305.418-1.745.696C.408 5.56 0 5.954 0 6.5v7c0 .546.408.94.823 1.201.44.278 1.043.51 1.745.696C3.978 15.773 5.898 16 8 16s4.022-.227 5.432-.603c.701-.187 1.305-.418 1.745-.696.415-.261.823-.655.823-1.201v-7c0-.546-.408-.94-.823-1.201-.44-.278-1.043-.51-1.745-.696A12 12 0 0 0 13 4.496v-2.69a.747.747 0 0 0 .092-1.004l-.598-.79-.595.792A.747.747 0 0 0 12 1.813V4.3a22 22 0 0 0-2-.23V1.806a.747.747 0 0 0 .092-1.004l-.598-.79-.595.792A.747.747 0 0 0 9 1.813v2.204a29 29 0 0 0-2 0V1.806A.747.747 0 0 0 7.092.802l-.598-.79-.595.792A.747.747 0 0 0 6 1.813V4.07c-.71.05-1.383.129-2 .23V1.806A.747.747 0 0 0 4.092.802zm-.668 5.556L3 5.524v.967q.468.111 1 .201V5.315a21 21 0 0 1 2-.242v1.855q.488.036 1 .054V5.018a28 28 0 0 1 2 0v1.964q.512-.018 1-.054V5.073c.72.054 1.393.137 2 .242v1.377q.532-.09 1-.201v-.967l.175.045c.655.175 1.15.374 1.469.575.344.217.356.35.356.356s-.012.139-.356.356c-.319.2-.814.4-1.47.575C11.87 7.78 10.041 8 8 8c-2.04 0-3.87-.221-5.174-.569-.656-.175-1.151-.374-1.47-.575C1.012 6.639 1 6.506 1 6.5s.012-.139.356-.356c.319-.2.814-.4 1.47-.575M15 7.806v1.027l-.68.907a.94.94 0 0 1-1.17.276 1.94 1.94 0 0 0-2.236.363l-.348.348a1 1 0 0 1-1.307.092l-.06-.044a2 2 0 0 0-2.399 0l-.06.044a1 1 0 0 1-1.306-.092l-.35-.35a1.935 1.935 0 0 0-2.233-.362.935.935 0 0 1-1.168-.277L1 8.82V7.806c.42.232.956.428 1.568.591C3.978 8.773 5.898 9 8 9s4.022-.227 5.432-.603c.612-.163 1.149-.36 1.568-.591m0 2.679V13.5c0 .006-.012.139-.356.355-.319.202-.814.401-1.47.576C11.87 14.78 10.041 15 8 15c-2.04 0-3.87-.221-5.174-.569-.656-.175-1.151-.374-1.47-.575-.344-.217-.356-.35-.356-.356v-3.02a1.935 1.935 0 0 0 2.298.43.935.935 0 0 1 1.08.175l.348.349a2 2 0 0 0 2.615.185l.059-.044a1 1 0 0 1 1.2 0l.06.044a2 2 0 0 0 2.613-.185l.348-.348a.94.94 0 0 1 1.082-.175c.781.39 1.718.208 2.297-.426"/>
-              </svg>
-              <span id="birthday"></span>
+            </span>
+          </button>
+        </div>
+        <div id="name_gender_container">
+          <!--container me te dhenat e perdoruesit qe mbushen ne javascript-->
+          <h1 id="name"></h1>
+          <svg
+            id="female"
+            class="gender"
+            xmlns="http://www.w3.org/2000/svg"
+            width="25"
+            height="25"
+            fill="currentColor"
+            class="bi bi-gender-female"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M8 1a4 4 0 1 0 0 8 4 4 0 0 0 0-8M3 5a5 5 0 1 1 5.5 4.975V12h2a.5.5 0 0 1 0 1h-2v2.5a.5.5 0 0 1-1 0V13h-2a.5.5 0 0 1 0-1h2V9.975A5 5 0 0 1 3 5"
+            />
+          </svg>
 
-            </div>
-        </section>
-        <section id="change_info">
-          <h2>NDRYSHO TE DHENAT</h2>
-            <form id="change_account">
-              <!--forma e ndyrshimit te te dhenave si password dhe numri i telefonit bashke me mesazhet e errorit-->
-            <div id="passwords">
-              <h4>Nderro Fjalekalimin</h4>
-              <input type="password" id="existing_pswd" name="existing_pswd" class="text_inputs" placeholder="Fjalekalimi Egzistues" tabindex="3"> 
-              <p class=" error_msg" id="existing_pswd_error">Fjalekalimi egzistues eshte i gabuar</p>
-              <input type="password" id="new_pswd" name="new_pswd" placeholder="Fjalekalimi i Ri" class="text_inputs" tabindex="4">
-              <p class=" error_msg" id="password_error">Password duhet te kete te pakten 8 karaktere ku te pakten nje shkronje kapitale, nje shkronje te vogel, nje numer dhe nje karakter special.</p>
-              <input type="password" id="confirm_new_pswd" name="confirm_new_pswd" placeholder="Konfirmo Fjalekalimin" class="text_inputs" tabindex="5">
-              <p class=" error_msg" id="confirmPwd_error">Password-et nuk jane te njejta.</p>
-            </div>
-            <div>
-              <h4>Nderro Numrin e Telefonit</h4>
-              <input class="text_inputs" type="tel" id="phone" name="phone" placeholder="06x xxx xxxx" pattern="06[7-9][0-9]{7}" maxlength="10" tabindex="6">
-              <p class=" error_msg" id="phone_error">Numri i cel eshte i pasakte.</p>
-            </div>
-          </form>
-          <!--butoni per ruajtjen e te dhenave-->
-          <button type="button" id="save_changes" tabindex="7">Ruaj Ndryshimet</button>
-        </section>
-        <section id="charts">
-          <!--seksioni i charteve ku kemi chartet e zhanerave dhe oreve te shpenzuara-->
-          <h1 id="stats">STATISTIKAT E TUA</h1>
-          <div id="chart1">
-            <canvas id="genre_chart" class="chart" tabindex="8"></canvas>
+          <svg
+            id="male"
+            class="gender"
+            xmlns="http://www.w3.org/2000/svg"
+            width="25"
+            height="25"
+            fill="currentColor"
+            class="bi bi-gender-male"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M9.5 2a.5.5 0 0 1 0-1h5a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0V2.707L9.871 6.836a5 5 0 1 1-.707-.707L13.293 2zM6 6a4 4 0 1 0 0 8 4 4 0 0 0 0-8"
+            />
+          </svg>
+        </div>
+        <div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-envelope"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"
+            />
+          </svg>
+          <span id="email"></span>
+        </div>
+        <div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-telephone"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"
+            />
+          </svg>
+          <span id="phone_number"></span>
+        </div>
+        <div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-cake2"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="m3.494.013-.595.79A.747.747 0 0 0 3 1.814v2.683q-.224.051-.432.107c-.702.187-1.305.418-1.745.696C.408 5.56 0 5.954 0 6.5v7c0 .546.408.94.823 1.201.44.278 1.043.51 1.745.696C3.978 15.773 5.898 16 8 16s4.022-.227 5.432-.603c.701-.187 1.305-.418 1.745-.696.415-.261.823-.655.823-1.201v-7c0-.546-.408-.94-.823-1.201-.44-.278-1.043-.51-1.745-.696A12 12 0 0 0 13 4.496v-2.69a.747.747 0 0 0 .092-1.004l-.598-.79-.595.792A.747.747 0 0 0 12 1.813V4.3a22 22 0 0 0-2-.23V1.806a.747.747 0 0 0 .092-1.004l-.598-.79-.595.792A.747.747 0 0 0 9 1.813v2.204a29 29 0 0 0-2 0V1.806A.747.747 0 0 0 7.092.802l-.598-.79-.595.792A.747.747 0 0 0 6 1.813V4.07c-.71.05-1.383.129-2 .23V1.806A.747.747 0 0 0 4.092.802zm-.668 5.556L3 5.524v.967q.468.111 1 .201V5.315a21 21 0 0 1 2-.242v1.855q.488.036 1 .054V5.018a28 28 0 0 1 2 0v1.964q.512-.018 1-.054V5.073c.72.054 1.393.137 2 .242v1.377q.532-.09 1-.201v-.967l.175.045c.655.175 1.15.374 1.469.575.344.217.356.35.356.356s-.012.139-.356.356c-.319.2-.814.4-1.47.575C11.87 7.78 10.041 8 8 8c-2.04 0-3.87-.221-5.174-.569-.656-.175-1.151-.374-1.47-.575C1.012 6.639 1 6.506 1 6.5s.012-.139.356-.356c.319-.2.814-.4 1.47-.575M15 7.806v1.027l-.68.907a.94.94 0 0 1-1.17.276 1.94 1.94 0 0 0-2.236.363l-.348.348a1 1 0 0 1-1.307.092l-.06-.044a2 2 0 0 0-2.399 0l-.06.044a1 1 0 0 1-1.306-.092l-.35-.35a1.935 1.935 0 0 0-2.233-.362.935.935 0 0 1-1.168-.277L1 8.82V7.806c.42.232.956.428 1.568.591C3.978 8.773 5.898 9 8 9s4.022-.227 5.432-.603c.612-.163 1.149-.36 1.568-.591m0 2.679V13.5c0 .006-.012.139-.356.355-.319.202-.814.401-1.47.576C11.87 14.78 10.041 15 8 15c-2.04 0-3.87-.221-5.174-.569-.656-.175-1.151-.374-1.47-.575-.344-.217-.356-.35-.356-.356v-3.02a1.935 1.935 0 0 0 2.298.43.935.935 0 0 1 1.08.175l.348.349a2 2 0 0 0 2.615.185l.059-.044a1 1 0 0 1 1.2 0l.06.044a2 2 0 0 0 2.613-.185l.348-.348a.94.94 0 0 1 1.082-.175c.781.39 1.718.208 2.297-.426"
+            />
+          </svg>
+          <span id="birthday"></span>
+        </div>
+      </section>
+      <section id="change_info">
+        <h2>NDRYSHO TE DHENAT</h2>
+        <form id="change_account">
+          <!--forma e ndyrshimit te te dhenave si password dhe numri i telefonit bashke me mesazhet e errorit-->
+          <div id="passwords">
+            <h4>Nderro Fjalekalimin</h4>
+            <input
+              type="password"
+              id="existing_pswd"
+              name="existing_pswd"
+              class="text_inputs"
+              placeholder="Fjalekalimi Egzistues"
+              tabindex="3"
+            />
+            <p class="error_msg" id="existing_pswd_error">
+              Fjalekalimi egzistues eshte i gabuar
+            </p>
+            <input
+              type="password"
+              id="new_pswd"
+              name="new_pswd"
+              placeholder="Fjalekalimi i Ri"
+              class="text_inputs"
+              tabindex="4"
+            />
+            <p class="error_msg" id="password_error">
+              Password duhet te kete te pakten 8 karaktere ku te pakten nje
+              shkronje kapitale, nje shkronje te vogel, nje numer dhe nje
+              karakter special.
+            </p>
+            <input
+              type="password"
+              id="confirm_new_pswd"
+              name="confirm_new_pswd"
+              placeholder="Konfirmo Fjalekalimin"
+              class="text_inputs"
+              tabindex="5"
+            />
+            <p class="error_msg" id="confirmPwd_error">
+              Password-et nuk jane te njejta.
+            </p>
           </div>
           <div>
-            <canvas id="time_spent_chart" class="chart" tabindex="9"></canvas>
+            <h4>Nderro Numrin e Telefonit</h4>
+            <input
+              class="text_inputs"
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="06x xxx xxxx"
+              pattern="06[7-9][0-9]{7}"
+              maxlength="10"
+              tabindex="6"
+            />
+            <p class="error_msg" id="phone_error">
+              Numri i cel eshte i pasakte.
+            </p>
           </div>
-        </section>
-      </main>
-      <!--footer-->
-      <footer class="footer">
-        <section class="footer-1">
-          <h2 id="about">Help & Policy</h2>
-          <ul>
-            <li><a href="#">Terms & Conditions</a></li>
-            <li><a href="../views/settings.html">Settings</a></li>
-            <li><a href="./contact.html">Kontaktet</a></li>
-          </ul>
-        </section>
-        <section class="footer-2">
-          <h2 id="contact">FOLLOW US</h2>
-          <div class="social-icons">
-            <img src="../images/twitter-sign.png" alt="twitter" />
-            <img src="../images/instagram.png" alt="instagram" />
-            <img src="../images/facebook.png" alt="facebook" />
-            <img src="../images/youtube.png" alt="youtube" />
-          </div>
-        </section>
-        <section class="powered">
-          <h2>&copy; Modify| All rights reserved</h2>
-        </section>
-      </footer>
-      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-      <script src="../scripts/profile.js"></script>
-    </body>
+        </form>
+        <!--butoni per ruajtjen e te dhenave-->
+        <button type="button" id="save_changes" tabindex="7">
+          Ruaj Ndryshimet
+        </button>
+      </section>
+      <section id="charts">
+        <!--seksioni i charteve ku kemi chartet e zhanerave dhe oreve te shpenzuara-->
+        <h1 id="stats">STATISTIKAT E TUA</h1>
+        <div id="chart1">
+          <canvas id="genre_chart" class="chart" tabindex="8"></canvas>
+        </div>
+        <div>
+          <canvas id="time_spent_chart" class="chart" tabindex="9"></canvas>
+        </div>
+      </section>
+    </main>
+    <!--footer-->
+    <footer class="footer">
+      <section class="footer-1">
+        <h2 id="about">Help & Policy</h2>
+        <ul>
+          <li><a href="./termsCond.html">Terms & Conditions</a></li>
+          <li><a href="./settings.html">Settings</a></li>
+          <li><a href="./contact.html">Kontaktet</a></li>
+        </ul>
+      </section>
+      <section class="footer-2">
+        <h2 id="contact">FOLLOW US</h2>
+        <div class="social-icons">
+          <img src="../images/twitter-sign.png" alt="twitter" />
+          <img src="../images/instagram.png" alt="instagram" />
+          <img src="../images/facebook.png" alt="facebook" />
+          <img src="../images/youtube.png" alt="youtube" />
+        </div>
+      </section>
+      <section class="powered">
+        <h2>&copy; Modify| All rights reserved</h2>
+      </section>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../scripts/profile.js"></script>
+    <script src="../scripts/script.js"></script>
+  </body>
 </html>

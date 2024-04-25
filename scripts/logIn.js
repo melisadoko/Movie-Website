@@ -17,8 +17,10 @@ signInButton.addEventListener("click", function (event) {
   if (emailInput === "" || passwordInput === "") {
     alert("Ju lutem plotësoni email dhe fjalëkalimin");
     return;
+  } else if (!user) {
+    alert("Fillimisht krijoni llogari");
+    return;
   }
-
   // nese email dhe password jane keto qe kemi deklaruar
   if (emailInput === user.email && passwordInput === user.password) {
     window.location.href = "../views/home.html";
