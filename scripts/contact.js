@@ -118,16 +118,6 @@ function ValidationStyling(objekti, lloji, error) {
   });
 })();
 
-function getEmail() {
-  return {
-    firstname: document.getElementById("firstname").value,
-    email: document.getElementById("email").value,
-    lastname: document.getElementById("lastname").value,
-    phone: document.getElementById("phone").value,
-    message: document.getElementById("message").value,
-  };
-}
-
 document
   .getElementById("sendEmail")
   .addEventListener("click", function (event) {
@@ -146,7 +136,6 @@ document
       valid_Phone &&
       valid_Message;
     if (check) {
-      localStorage.setItem("email", JSON.stringify(getEmail()));
       document.getElementById("contact-form").submit();
     }
   });
